@@ -15,8 +15,6 @@ extern "C"
 		OE::ActionEntityManager = (CActionEntityManager**)(resolve_relative_addr((PatternScan(GetModuleHandle(NULL), "48 8B 0D ? ? ? ? E8 ? ? ? ? 48 8B 07 48 8B CF FF 50 08 E9 ? ? ? ?")), 7));
 		OE::SequenceManager = (CSequenceManager**)(resolve_relative_addr((PatternScan(GetModuleHandle(NULL), "48 8B 05 ? ? ? ? 44 8B 88 88 00 00 00")), 7));
 
-		std::cout << std::hex << OE::SequenceManager << std::endl;
-
 		OE::InitHook();
 	}
 
@@ -29,7 +27,6 @@ extern "C"
 		
 		if (seqMan == nullptr || seqMan->missionData == nullptr)
 			return false;
-
 
 		return (*OE::ActionManager)->isLoaded && seqMan->missionData->missionID > 0 && seqMan->missionData->missionID < 1500;
 	}

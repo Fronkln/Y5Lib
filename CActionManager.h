@@ -32,6 +32,8 @@ public:
 	class CActionCameraManager* actionCameraManager; //0x0610
 	char pad_0618[1064]; //0x0618
 	class CActionPrincessLeagueManager* princessLeagueManager; //0x0A40
-	char pad_0A48[11712]; //0x0A48
+	char pad_0A48[24]; //0x0A48
+	class CActionDanceBattleManager* danceBattleManager; //0x0A60
+	char pad_0A68[11680]; //0x0A68
 }; //Size: 0x1808
 #pragma pack(pop, 1)

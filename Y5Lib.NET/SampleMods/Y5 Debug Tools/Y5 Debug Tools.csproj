@@ -56,6 +56,7 @@
     <Compile Include="Windows\PlayerMenu.cs" />
     <Compile Include="Windows\SubWindowEntity.cs" />
     <Compile Include="Windows\SubWindowFighter.cs" />
+    <Compile Include="Windows\SubWindowHuman.cs" />
     <Compile Include="Windows\UnityIntegration.cs" />
   </ItemGroup>
   <ItemGroup>

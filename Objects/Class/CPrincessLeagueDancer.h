@@ -1,6 +1,6 @@
 // Created with ReClass.NET 1.2 by KN4CK3R
 
-class CPrincessLeagueDancer
+class CDancer
 {
 public:
 	char pad_0000[48]; //0x0000

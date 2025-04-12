@@ -33,6 +33,12 @@ namespace Y5_Debug_Tools
                                 ImGui.TreePop();
                             }
 
+                            if(ImGui.TreeNode("Human Info"))
+                            {
+                                SubWindowHuman.Draw(fighter);
+                                ImGui.TreePop();
+                            }
+
                             if (ImGui.TreeNode("Fighter Info"))
                             {
                                 SubWindowFighter.Draw(fighter);

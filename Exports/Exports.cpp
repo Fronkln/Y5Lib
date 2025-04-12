@@ -12,6 +12,7 @@
 #include "CSequenceManagerExports.h"
 #include "CLiveBtlPlayerExports.h"
 #include "CActionPrincessLeagueManagerExports.h"
+#include "CActionDanceBattleManagerExports.h"
 #include "CActInputDeviceManagerExports.h"
 #include "CInputDeviceListenerExports.h"
 #include "MemoryMgr.h"

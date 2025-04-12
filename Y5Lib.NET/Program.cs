@@ -21,8 +21,6 @@ namespace Y5Lib.NET
         {
             try
             {
-
-
                 BaseDirectory = AppDomain.CurrentDomain.BaseDirectory;
                 Root = args[0];
 

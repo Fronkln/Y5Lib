@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
+using System.Collections.Generic;
 
 namespace Y5Lib
 {
@@ -26,6 +27,35 @@ namespace Y5Lib
         internal static extern int Y5Lib_ActionFighterManager_AddToDisposeQueue(ref DisposeInfo spawnInf);
 
         public static Fighter Player { get { return new Fighter() { Pointer = Y5Lib_ActionFighterManager_GetPlayer() }; } }
+
+
+        public static Fighter[] GetFighters()
+        {
+            List<Fighter> fighters = new List<Fighter>();
+
+            for(int i = 0; i < 64; i++)
+                if(IsFighterPresent(i))
+                    fighters.Add(GetFighter(i));
+
+            return fighters.ToArray();
+        }
+
+        public static Fighter[] GetEnemies()
+        {
+            List<Fighter> fighters = new List<Fighter>();
+
+            for (int i = 0; i < 64; i++)
+                if (IsFighterPresent(i))
+                {
+                    var fighter = GetFighter(i);    
+                    var dispose = fighter.Dispose;
+
+                    if (dispose.FighterType == NPCType.Goon || dispose.FighterType == NPCType.Boss)
+                        fighters.Add(fighter);
+                }
+
+            return fighters.ToArray();
+        }
 
         public static Fighter GetPlayer()
         {

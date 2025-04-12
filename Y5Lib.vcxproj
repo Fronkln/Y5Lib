@@ -167,6 +167,7 @@
     <ClInclude Include="defines.h" />
     <ClInclude Include="Exports\CActInputDeviceManagerExports.h" />
     <ClInclude Include="Exports\CActionCameraManagerExports.h" />
+    <ClInclude Include="Exports\CActionDanceBattleManagerExports.h" />
     <ClInclude Include="Exports\CActionEntityManagerExports.h" />
     <ClInclude Include="Exports\CActionFighterManagerExports.h" />
     <ClInclude Include="Exports\CActionManagerExports.h" />
@@ -174,6 +175,7 @@
     <ClInclude Include="Exports\CInputDeviceListenerExports.h" />
     <ClInclude Include="Exports\MemoryMgr.h" />
     <ClInclude Include="Objects\Class\CActInputDeviceManager.h" />
+    <ClInclude Include="Objects\Class\CActionDanceBattleManager.h" />
     <ClInclude Include="Objects\Class\CActionPrincessLeagueManager.h" />
     <ClInclude Include="Exports\CCameraBaseExports.h" />
     <ClInclude Include="Exports\CLiveBtlPlayerExports.h" />
