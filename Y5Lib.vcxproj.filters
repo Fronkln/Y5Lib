@@ -144,7 +144,7 @@
     <ClInclude Include="Objects\Class\CActionPrincessLeagueManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Objects\Class\CPrincessLeagueDancer.h">
+    <ClInclude Include="Objects\Class\CDancer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Exports\CActionPrincessLeagueManagerExports.h">
@@ -169,6 +169,36 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Exports\CActionDanceBattleManagerExports.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Class\CActionLiveBattleManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exports\CActionLiveBattleManagerExports.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Class\CActionHActManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Class\CHAct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exports\CActionHActManagerExports.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exports\CHActExports.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Class\CActionReactorManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exports\CActionReactorManagerExports.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Class\FighterMode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exports\FighterModeExports.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -198,6 +228,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Objects\Class\CActInputDeviceManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Class\CActionHActManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Class\CActionReactorManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Class\FighterMode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

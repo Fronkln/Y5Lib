@@ -35,4 +35,12 @@ extern "C"
 		
 		fighter->inputFlags = val;
 	}
+
+	Y5LIB_EXPORT inline FighterModeManager* OE_LIB_FIGHTER_GETTER_FIGHTERMODEMANAGER(Fighter* fighter)
+	{
+		if (fighter == nullptr)
+			return 0;
+
+		return fighter->fighterModeManager;
+	}
 }

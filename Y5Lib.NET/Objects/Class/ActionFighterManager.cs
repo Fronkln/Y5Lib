@@ -40,6 +40,17 @@ namespace Y5Lib
             return fighters.ToArray();
         }
 
+        public static int[] GetFighterIDs()
+        {
+            List<int> ids = new List<int>();
+
+            for (int i = 0; i < 64; i++)
+                if (IsFighterPresent(i))
+                    ids.Add(i);
+
+            return ids.ToArray();
+        }
+
         public static Fighter[] GetEnemies()
         {
             List<Fighter> fighters = new List<Fighter>();

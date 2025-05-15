@@ -43,4 +43,5 @@ public:
 	int32_t N0000453C; //0x00A4
 	uint16_t N0000453F; //0x00A8
 	uint16_t N00004541; //0x00AA
+	char pad_00AC[4]; //0x00AC
 }; //Size: 0x00AC

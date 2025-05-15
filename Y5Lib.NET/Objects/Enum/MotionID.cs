@@ -10789,6 +10789,5 @@
         HAL_TLK_sitsofa_phone_R_lp = 10784,
         E_SH11330_noukudaki_B_climax = 10785,
         P_SH11330_noukudaki_B_climax = 10786,
-        AIR = 21222,
     }
 }

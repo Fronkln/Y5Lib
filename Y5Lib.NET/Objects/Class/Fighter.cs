@@ -12,6 +12,9 @@ namespace Y5Lib
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTER_GETTER_MODEL_NAME", CallingConvention = CallingConvention.Cdecl)]
         internal static extern IntPtr Y5Lib_Fighter_Getter_ModelName(IntPtr fighter);
 
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTER_GETTER_FIGHTERMODEMANAGER", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern IntPtr Y5Lib_Fighter_Getter_FighterModeManager(IntPtr fighter);
+
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTER_GETTER_INPUT_FLAGS", CallingConvention = CallingConvention.Cdecl)]
         internal static extern int Y5Lib_Fighter_Getter_InputFlags(IntPtr fighter);
 
@@ -38,6 +41,14 @@ namespace Y5Lib
             {
                 IntPtr ptr = Y5Lib_Fighter_Getter_ModelName(Pointer);
                 return ptr != IntPtr.Zero ? Marshal.PtrToStringAnsi(ptr) : "invalid";
+            }
+        }
+
+        public FighterModeManager ModeManager
+        {
+            get
+            {
+                return new FighterModeManager() { Pointer = Y5Lib_Fighter_Getter_FighterModeManager(Pointer) };
             }
         }
 

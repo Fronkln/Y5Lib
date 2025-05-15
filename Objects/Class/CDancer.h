@@ -1,5 +1,5 @@
 // Created with ReClass.NET 1.2 by KN4CK3R
-
+#pragma once
 class CDancer
 {
 public:

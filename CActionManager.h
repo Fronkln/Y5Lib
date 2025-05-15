@@ -28,11 +28,18 @@ public:
 	void* actionFighterManager; //0x0258
 	char pad_0260[8]; //0x0260
 	void* actionFighterManager2; //0x0268
-	char pad_0270[928]; //0x0270
+	char pad_0270[264]; //0x0270
+	class CActionHActManager* actionHActManager; //0x0378
+	char pad_0380[248]; //0x0380
+	void* N000081B0; //0x0478
+	char pad_0480[400]; //0x0480
 	class CActionCameraManager* actionCameraManager; //0x0610
-	char pad_0618[1064]; //0x0618
+	char pad_0618[1040]; //0x0618
+	class CActionReactorManager* reactorManager; //0x0A28
+	char pad_0A30[16]; //0x0A30
 	class CActionPrincessLeagueManager* princessLeagueManager; //0x0A40
-	char pad_0A48[24]; //0x0A48
+	class CActionLiveBattleManager* liveBattleManager; //0x0A48
+	char pad_0A50[16]; //0x0A50
 	class CActionDanceBattleManager* danceBattleManager; //0x0A60
 	char pad_0A68[11680]; //0x0A68
 }; //Size: 0x1808

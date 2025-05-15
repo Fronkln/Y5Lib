@@ -1,7 +1,7 @@
 #pragma once
 #include "defines.h"
 #include "Objects/Class/CActionPrincessLeagueManager.h"
-#include "Objects/Class/CPrincessLeagueDancer.h"
+#include "Objects/Class/CDancer.h"
 #include "CActionManager.h"
 #include "OE.h"
 
