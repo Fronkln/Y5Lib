@@ -43,4 +43,12 @@ extern "C"
 
 		return fighter->fighterModeManager;
 	}
+
+	Y5LIB_EXPORT inline int OE_LIB_FIGHTER_GETTER_INDEX(Fighter* fighter)
+	{
+		if (fighter == nullptr)
+			return -1;
+		else
+			return fighter->fighterIndex;
+	}
 }

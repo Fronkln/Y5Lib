@@ -1,5 +1,7 @@
 #pragma once
 
+class Fighter;
+
 class FighterMode
 {
 public:
@@ -7,7 +9,7 @@ public:
 	char pad_0008[8]; //0x0008
 	char* modeName; //0x0010
 	char pad_0018[8]; //0x0018
-	void* fighter; //0x0020
+	Fighter* fighter; //0x0020
 	char pad_0028[300]; //0x0028
 }; //Size: 0x0154
 

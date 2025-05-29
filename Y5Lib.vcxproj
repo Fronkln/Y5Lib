@@ -173,16 +173,18 @@
     <ClInclude Include="Exports\CActionHActManagerExports.h" />
     <ClInclude Include="Exports\CActionLiveBattleManagerExports.h" />
     <ClInclude Include="Exports\CActionManagerExports.h" />
+    <ClInclude Include="Exports\CActionMotionManagerExports.h" />
     <ClInclude Include="Exports\CActionPrincessLeagueManagerExports.h" />
     <ClInclude Include="Exports\CActionReactorManagerExports.h" />
     <ClInclude Include="Exports\CHActExports.h" />
     <ClInclude Include="Exports\CInputDeviceListenerExports.h" />
     <ClInclude Include="Exports\FighterModeExports.h" />
-    <ClInclude Include="Exports\MemoryMgr.h" />
+    <ClInclude Include="MemoryMgr.h" />
     <ClInclude Include="Objects\Class\CActInputDeviceManager.h" />
     <ClInclude Include="Objects\Class\CActionDanceBattleManager.h" />
     <ClInclude Include="Objects\Class\CActionHActManager.h" />
     <ClInclude Include="Objects\Class\CActionLiveBattleManager.h" />
+    <ClInclude Include="Objects\Class\CActionMotionManager.h" />
     <ClInclude Include="Objects\Class\CActionPrincessLeagueManager.h" />
     <ClInclude Include="Exports\CCameraBaseExports.h" />
     <ClInclude Include="Exports\CLiveBtlPlayerExports.h" />
@@ -200,6 +202,7 @@
     <ClInclude Include="Objects\Class\CActionCameraManager.h" />
     <ClInclude Include="Objects\Class\CActionReactorManager.h" />
     <ClInclude Include="Objects\Class\CCameraBase.h" />
+    <ClInclude Include="Objects\Class\CFileBase.h" />
     <ClInclude Include="Objects\Class\CHAct.h" />
     <ClInclude Include="Objects\Class\CInputDeviceListener.h" />
     <ClInclude Include="Objects\Class\CLiveBtlPlayer.h" />
@@ -230,6 +233,7 @@
     <ClCompile Include="CActionEntityManager.cpp" />
     <ClCompile Include="Objects\Class\CActInputDeviceManager.cpp" />
     <ClCompile Include="Objects\Class\CActionHActManager.cpp" />
+    <ClCompile Include="Objects\Class\CActionMotionManager.cpp" />
     <ClCompile Include="Objects\Class\CActionReactorManager.cpp" />
     <ClCompile Include="Objects\Class\CLiveBtlPlayer.cpp" />
     <ClCompile Include="Objects\Class\FighterMode.cpp" />

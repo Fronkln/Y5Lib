@@ -18,6 +18,9 @@ namespace Y5Lib
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTER_GETTER_INPUT_FLAGS", CallingConvention = CallingConvention.Cdecl)]
         internal static extern int Y5Lib_Fighter_Getter_InputFlags(IntPtr fighter);
 
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTER_GETTER_INDEX", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Y5Lib_Fighter_Getter_Index(IntPtr fighter);
+
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTER_SETTER_INPUT_FLAGS", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Y5Lib_Fighter_Setter_InputFlags(IntPtr fighter, int val);
 
@@ -61,6 +64,14 @@ namespace Y5Lib
             set
             {
                 Y5Lib_Fighter_Setter_InputFlags(Pointer, value);
+            }
+        }
+
+        public int Index
+        {
+            get
+            {
+                return Y5Lib_Fighter_Getter_Index(Pointer);
             }
         }
     }

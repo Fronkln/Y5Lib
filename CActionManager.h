@@ -23,11 +23,12 @@ public:
 	uint32_t N00006A6E; //0x015C
 	int32_t N000014A7; //0x0160
 	char pad_0164[132]; //0x0164
-	float speed[16]; //0x01E8
-	char pad_0228[48]; //0x0228
-	void* actionFighterManager; //0x0258
-	char pad_0260[8]; //0x0260
-	void* actionFighterManager2; //0x0268
+	float speed[15]; //0x01E8
+	char pad_0224[44]; //0x0224
+	class CActionControlTypeManager* controlTypeManager; //0x0250
+	class CActionFighterManager* actionFighterManager; //0x0258
+	class CActionMotionManager* actionMotionManager; //0x0260
+	class CActionFighterManager* actionFighterManager2; //0x02688
 	char pad_0270[264]; //0x0270
 	class CActionHActManager* actionHActManager; //0x0378
 	char pad_0380[248]; //0x0380

@@ -27,4 +27,12 @@ extern "C"
 		else
 			return fighterMode->modeName;
 	}
+
+	Y5LIB_EXPORT inline Fighter* OE_LIB_FIGHTERMODE_GETTER_FIGHTER(FighterMode* fighterMode)
+	{
+		if (fighterMode == nullptr)
+			return nullptr;
+		else
+			return fighterMode->fighter;
+	}
 }

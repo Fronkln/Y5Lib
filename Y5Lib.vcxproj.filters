@@ -150,7 +150,7 @@
     <ClInclude Include="Exports\CActionPrincessLeagueManagerExports.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Exports\MemoryMgr.h">
+    <ClInclude Include="MemoryMgr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Objects\Class\CActInputDeviceManager.h">
@@ -201,6 +201,15 @@
     <ClInclude Include="Exports\FighterModeExports.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Objects\Class\CActionMotionManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exports\CActionMotionManagerExports.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Class\CFileBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -237,6 +246,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Objects\Class\FighterMode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Class\CActionMotionManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

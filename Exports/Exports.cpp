@@ -9,6 +9,7 @@
 #include "CHActExports.h"
 #include "CActionManagerExports.h"
 #include "CActionFighterManagerExports.h"
+#include "CActionMotionManagerExports.h"
 #include "CActionEntityManagerExports.h"
 #include "CActionCameraManagerExports.h"
 #include "CActionReactorManagerExports.h"

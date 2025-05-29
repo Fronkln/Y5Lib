@@ -107,13 +107,14 @@ namespace Y5Lib
                     }
         }
 
+        internal static string _LogPath;
         private static void WriteLineColor(string text, ConsoleColor col)
         {
             lock (m_writeLock)
             {
 
                // m_logWriter.WriteLine(text);
-                System.IO.File.AppendAllText("log.txt", text + "\n");
+                File.AppendAllText(_LogPath, text + "\n");
 
                 Console.ForegroundColor = col;
                 Console.WriteLine(text);

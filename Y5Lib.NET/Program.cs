@@ -25,6 +25,7 @@ namespace Y5Lib.NET
                 Root = args[0];
 
                 Environment.CurrentDirectory = Root;
+                OE._LogPath = Path.Combine(Root, "log.txt");
 
                 OE.LogInfo("Y5Lib Start");
 
@@ -65,8 +66,9 @@ namespace Y5Lib.NET
                 Console.WriteLine("Initialize mod");
                 ModLoader.InitializeMods();
 
-                Console.WriteLine("Y5Lib Initialized");
+                Environment.CurrentDirectory = BaseDirectory;
 
+                Console.WriteLine("Y5Lib Initialized");
                 while (true)
                 {
                     

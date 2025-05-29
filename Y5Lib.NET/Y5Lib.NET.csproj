@@ -67,6 +67,7 @@
     <Compile Include="Objects\Class\ActionInputManager.cs" />
     <Compile Include="Objects\Class\ActionLiveBattleManager.cs" />
     <Compile Include="Objects\Class\ActionManager.cs" />
+    <Compile Include="Objects\Class\ActionMotionManager.cs" />
     <Compile Include="Objects\Class\ActionPrincessLeagueManager.cs" />
     <Compile Include="Objects\Class\CameraBase.cs" />
     <Compile Include="Objects\Class\ActionReactorManager.cs" />

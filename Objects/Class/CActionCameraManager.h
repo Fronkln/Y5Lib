@@ -6,7 +6,8 @@
 class CActionCameraManager : public CActionBase
 {
 public:
-	char pad_0240[56]; //0x0240
+	char pad_01C8[168]; //0x01C8
+	class CCameraBase* (*camerasPointer)[128]; //0x0270
 	int32_t cameraCount; //0x0278
 	char pad_027C[4]; //0x027C
 	class CCameraBase* cameras[128]; //0x0280
