@@ -1,6 +1,7 @@
 #pragma once
 #include "defines.h"
 #include "Objects/Class/CActionDanceBattleManager.h"
+#include "Objects/Class/CActionDanceEventManager.h"
 #include "CActionManager.h"
 #include "OE.h"
 
@@ -22,5 +23,21 @@ extern "C"
 			return 0;
 
 		return actMan->danceBattleManager->dancers[idx]->dancer;
+	}
+
+	Y5LIB_EXPORT inline Human* OE_LIB_DANCEEVENTMANAGER_GET_PLAYER()
+	{
+		CActionManager* actMan = *OE::ActionManager;
+
+		if (actMan == nullptr)
+			return 0;
+
+		if (actMan->danceEventManager == nullptr)
+			return 0;
+
+		if (actMan->danceEventManager->player == nullptr)
+			return 0;
+
+		return actMan->danceEventManager->player->dancer;
 	}
 }

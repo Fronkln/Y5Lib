@@ -9,9 +9,11 @@ class Human : public Entity
 {
 public:
 	Motion::EntityMotion* Motion; //0x0140
-	char pad_0148[64]; //0x0148
-	void* N00003BF8; //0x0188
-	char pad_0190[1304]; //0x0190
+	char pad_0148[24]; //0x0148
+	class HumanModel* Model; //0x0160
+	char pad_0168[1208]; //0x0168
+	void* N00004915; //0x0620
+	char pad_0628[128]; //0x0628
 }; //Size: 0x06A4
 
 #pragma pack(pop)

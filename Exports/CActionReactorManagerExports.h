@@ -23,4 +23,9 @@ extern "C"
 		Entity* reactor = actMan->reactorManager->CreateReactor(name, &pos, &rot, &idk, &idk2, 0, 0, -1);
 		return reactor;
 	}
+
+	Y5LIB_EXPORT inline int OE_LIB_ACTIONREACTORMANAGER_FINDREACTORID(const char* name)
+	{
+		return CActionReactorManager::ASM_FindReactorID(name);
+	}
 }

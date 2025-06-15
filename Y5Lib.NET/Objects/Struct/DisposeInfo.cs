@@ -11,9 +11,8 @@ namespace Y5Lib
         // Token: 0x040000CB RID: 203
         public uint N0000051D;
 
-        // Token: 0x040000CC RID: 204
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-        public char[] pad_0004;
+        public short N000002C1;
+        public short N00001F51;
 
         // Token: 0x040000CD RID: 205
         public ulong N0000051E;
@@ -27,9 +26,7 @@ namespace Y5Lib
         // Token: 0x040000D0 RID: 208
         public uint N00000520;
 
-        // Token: 0x040000D1 RID: 209
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-        public char[] pad_001C;
+        public uint N000002BD;
 
         // Token: 0x040000D2 RID: 210
         public uint N00000521;
@@ -79,9 +76,8 @@ namespace Y5Lib
         // Token: 0x040000E1 RID: 225
         public byte N00004556;
 
-        // Token: 0x040000E2 RID: 226
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 5)]
-        public char[] pad_006B;
+        public ushort N0000455D;
+        public ushort N00003ED8;
 
         // Token: 0x040000E3 RID: 227
         public Vector4 spawnPosition;

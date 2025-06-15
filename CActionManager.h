@@ -28,20 +28,29 @@ public:
 	class CActionControlTypeManager* controlTypeManager; //0x0250
 	class CActionFighterManager* actionFighterManager; //0x0258
 	class CActionMotionManager* actionMotionManager; //0x0260
-	class CActionFighterManager* actionFighterManager2; //0x02688
-	char pad_0270[264]; //0x0270
+	class CActionFighterManager* actionFighterManager2; //0x0268
+	char pad_0270[8]; //0x0270
+	class CActionStageManager* actionStageManager; //0x0278
+	char pad_0280[248]; //0x0280
 	class CActionHActManager* actionHActManager; //0x0378
-	char pad_0380[248]; //0x0380
+	class CActionCCCManager* cccManager; //0x0380
+	char pad_0388[8]; //0x0388
+	void* cccc; //0x0390
+	char pad_0398[224]; //0x0398
 	void* N000081B0; //0x0478
-	char pad_0480[400]; //0x0480
+	char pad_0480[368]; //0x0480
+	class CActionHeatActionManager* N000081DF; //0x05F0
+	char pad_05F8[24]; //0x05F8
 	class CActionCameraManager* actionCameraManager; //0x0610
 	char pad_0618[1040]; //0x0618
 	class CActionReactorManager* reactorManager; //0x0A28
 	char pad_0A30[16]; //0x0A30
 	class CActionPrincessLeagueManager* princessLeagueManager; //0x0A40
 	class CActionLiveBattleManager* liveBattleManager; //0x0A48
-	char pad_0A50[16]; //0x0A50
+	char pad_0A50[8]; //0x0A50
+	class N00003DAE* N0000826C; //0x0A58
 	class CActionDanceBattleManager* danceBattleManager; //0x0A60
-	char pad_0A68[11680]; //0x0A68
+	class CActionDanceEventManager* danceEventManager; //0x0A68
+	char pad_0A70[11672]; //0x0A70
 }; //Size: 0x1808
 #pragma pack(pop, 1)

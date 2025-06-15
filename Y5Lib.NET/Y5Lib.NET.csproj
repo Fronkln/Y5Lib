@@ -60,7 +60,9 @@
     <Compile Include="ImGui.cs" />
     <Compile Include="ModLoader.cs" />
     <Compile Include="Objects\Class\ActionCameraManager.cs" />
+    <Compile Include="Objects\Class\ActionCCCManager.cs" />
     <Compile Include="Objects\Class\ActionDanceBattleManager.cs" />
+    <Compile Include="Objects\Class\ActionDanceEventManager.cs" />
     <Compile Include="Objects\Class\ActionEntityManager.cs" />
     <Compile Include="Objects\Class\ActionFighterManager.cs" />
     <Compile Include="Objects\Class\ActionHActManager.cs" />
@@ -69,6 +71,7 @@
     <Compile Include="Objects\Class\ActionManager.cs" />
     <Compile Include="Objects\Class\ActionMotionManager.cs" />
     <Compile Include="Objects\Class\ActionPrincessLeagueManager.cs" />
+    <Compile Include="Objects\Class\ActionStageManager.cs" />
     <Compile Include="Objects\Class\CameraBase.cs" />
     <Compile Include="Objects\Class\ActionReactorManager.cs" />
     <Compile Include="Objects\Class\DanceBtlPlayer.cs" />
@@ -80,6 +83,7 @@
     <Compile Include="Objects\Class\FighterModeManager.cs" />
     <Compile Include="Objects\Class\HAct.cs" />
     <Compile Include="Objects\Class\Human.cs" />
+    <Compile Include="Objects\Class\HumanModel.cs" />
     <Compile Include="Objects\Class\InputDeviceData.cs" />
     <Compile Include="Objects\Class\InputDeviceListener.cs" />
     <Compile Include="Objects\Class\InputDeviceSlot.cs" />

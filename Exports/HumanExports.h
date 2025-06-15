@@ -11,4 +11,12 @@ extern "C"
 		else
 			return ent->Motion;
 	}
+
+	Y5LIB_EXPORT inline HumanModel* OE_LIB_HUMAN_GETTER_MODEL(Human* ent)
+	{
+		if (ent == nullptr)
+			return nullptr;
+		else
+			return ent->Model;
+	}
 }

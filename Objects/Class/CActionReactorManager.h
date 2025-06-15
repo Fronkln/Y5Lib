@@ -5,11 +5,13 @@
 class CActionReactorManager;
 
 typedef Entity*(__fastcall* REACTORMANAGER_CreateReactor)(CActionReactorManager* rMan, const char* asset, vec4f* spawnPosition, vec4f* rotation, vec4f* unk1, vec4f* unk2, long long unk3, int unk4, int unk5);
+typedef int (__fastcall* REACTORMANAGER_FindReactorID)(const char* asset);
 
 class CActionReactorManager
 {
 public:
 	static REACTORMANAGER_CreateReactor ASM_CreateReactor;
+	static REACTORMANAGER_FindReactorID ASM_FindReactorID;
 
 	Entity* CreateReactor(const char* asset, vec4f* spawnPosition, vec4f* rotation, vec4f* unk1, vec4f* unk2, long long unk3, int unk4, int unk5) {
 		

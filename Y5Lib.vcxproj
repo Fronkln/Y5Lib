@@ -167,6 +167,7 @@
     <ClInclude Include="defines.h" />
     <ClInclude Include="Exports\CActInputDeviceManagerExports.h" />
     <ClInclude Include="Exports\CActionCameraManagerExports.h" />
+    <ClInclude Include="Exports\CActionCCCManagerExports.h" />
     <ClInclude Include="Exports\CActionDanceBattleManagerExports.h" />
     <ClInclude Include="Exports\CActionEntityManagerExports.h" />
     <ClInclude Include="Exports\CActionFighterManagerExports.h" />
@@ -176,12 +177,16 @@
     <ClInclude Include="Exports\CActionMotionManagerExports.h" />
     <ClInclude Include="Exports\CActionPrincessLeagueManagerExports.h" />
     <ClInclude Include="Exports\CActionReactorManagerExports.h" />
+    <ClInclude Include="Exports\CActionStageManagerExports.h" />
     <ClInclude Include="Exports\CHActExports.h" />
     <ClInclude Include="Exports\CInputDeviceListenerExports.h" />
     <ClInclude Include="Exports\FighterModeExports.h" />
+    <ClInclude Include="Exports\HumanModelExports.h" />
     <ClInclude Include="MemoryMgr.h" />
     <ClInclude Include="Objects\Class\CActInputDeviceManager.h" />
+    <ClInclude Include="Objects\Class\CActionCCCManager.h" />
     <ClInclude Include="Objects\Class\CActionDanceBattleManager.h" />
+    <ClInclude Include="Objects\Class\CActionDanceEventManager.h" />
     <ClInclude Include="Objects\Class\CActionHActManager.h" />
     <ClInclude Include="Objects\Class\CActionLiveBattleManager.h" />
     <ClInclude Include="Objects\Class\CActionMotionManager.h" />
@@ -201,6 +206,7 @@
     <ClInclude Include="Objects\Class\CActionBase.h" />
     <ClInclude Include="Objects\Class\CActionCameraManager.h" />
     <ClInclude Include="Objects\Class\CActionReactorManager.h" />
+    <ClInclude Include="Objects\Class\CActionStageManager.h" />
     <ClInclude Include="Objects\Class\CCameraBase.h" />
     <ClInclude Include="Objects\Class\CFileBase.h" />
     <ClInclude Include="Objects\Class\CHAct.h" />
@@ -214,6 +220,7 @@
     <ClInclude Include="Objects\Class\FighterMode.h" />
     <ClInclude Include="Objects\Class\FighterMotion.h" />
     <ClInclude Include="Objects\Class\Human.h" />
+    <ClInclude Include="Objects\Class\HumanModel.h" />
     <ClInclude Include="Objects\Class\HumanMotion.h" />
     <ClInclude Include="Objects\Class\MotionThingy.h" />
     <ClInclude Include="Objects\Class\UnknownMotionComponent.h" />
