@@ -6,6 +6,7 @@ using System.Runtime.ExceptionServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Messaging;
 using System.Security;
+using System.Threading;
 
 namespace Y5Lib.NET
 {
@@ -21,7 +22,7 @@ namespace Y5Lib.NET
                 OE.BaseDirectory = AppDomain.CurrentDomain.BaseDirectory;
                 OE.Root = args[0];
 
-                Environment.CurrentDirectory = OE.Root;
+                //Environment.CurrentDirectory = OE.Root;
                 OE._LogPath = Path.Combine(OE.Root, "log.txt");
 
                 OE.LogInfo("Y5Lib Start");
@@ -50,32 +51,37 @@ namespace Y5Lib.NET
                 };
 
 
+                OE.LogInfo("Starting initialization thread");
+                Thread thread = new Thread(InitThread);
+                thread.Start();
+
                 File.WriteAllText("log.txt", "");
-
-
-                while (!OE.IsInitialized())
-                {
-                    OE.Init();
-                }
-
-                AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
-
-                Console.WriteLine("Initialize mod");
-                ModLoader.InitializeMods();
-
-                Environment.CurrentDirectory = OE.BaseDirectory;
-
-                Console.WriteLine("Y5Lib Initialized");
-                while (true)
-                {
-                    
-
-                }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
             }
+        }
+
+        static void InitThread()
+        {
+            while (!OE.IsInitialized())
+            {
+#if DEBUG
+                OE.LogInfo("Proccing initialization");
+
+#endif
+                OE.Init();
+            }
+
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+
+            Console.WriteLine("Initialize mod");
+            ModLoader.InitializeMods();
+
+            Environment.CurrentDirectory = OE.BaseDirectory;
+
+            Console.WriteLine("Y5Lib Initialized");
         }
 
 
