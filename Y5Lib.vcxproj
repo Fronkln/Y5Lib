@@ -171,6 +171,7 @@
     <ClInclude Include="Exports\CActionDanceBattleManagerExports.h" />
     <ClInclude Include="Exports\CActionEntityManagerExports.h" />
     <ClInclude Include="Exports\CActionFighterManagerExports.h" />
+    <ClInclude Include="Exports\CActionHActCHPManager_Exports.h" />
     <ClInclude Include="Exports\CActionHActManagerExports.h" />
     <ClInclude Include="Exports\CActionLiveBattleManagerExports.h" />
     <ClInclude Include="Exports\CActionManagerExports.h" />
@@ -187,6 +188,7 @@
     <ClInclude Include="Objects\Class\CActionCCCManager.h" />
     <ClInclude Include="Objects\Class\CActionDanceBattleManager.h" />
     <ClInclude Include="Objects\Class\CActionDanceEventManager.h" />
+    <ClInclude Include="Objects\Class\CActionHActCHPManager.h" />
     <ClInclude Include="Objects\Class\CActionHActManager.h" />
     <ClInclude Include="Objects\Class\CActionLiveBattleManager.h" />
     <ClInclude Include="Objects\Class\CActionMotionManager.h" />

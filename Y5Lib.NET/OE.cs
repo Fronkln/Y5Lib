@@ -54,6 +54,9 @@ namespace Y5Lib
 
         internal delegate void RegisterJobDelegate();
 
+        public static string BaseDirectory;
+        public static string Root;
+
         internal class JobRegisterInfo
         {
             public Action funcRaw;

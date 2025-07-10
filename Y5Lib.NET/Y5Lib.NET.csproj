@@ -65,6 +65,7 @@
     <Compile Include="Objects\Class\ActionDanceEventManager.cs" />
     <Compile Include="Objects\Class\ActionEntityManager.cs" />
     <Compile Include="Objects\Class\ActionFighterManager.cs" />
+    <Compile Include="Objects\Class\ActionHActCHPManager.cs" />
     <Compile Include="Objects\Class\ActionHActManager.cs" />
     <Compile Include="Objects\Class\ActionInputManager.cs" />
     <Compile Include="Objects\Class\ActionLiveBattleManager.cs" />

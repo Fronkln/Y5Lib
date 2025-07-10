@@ -11,9 +11,6 @@ namespace Y5Lib.NET
 {
     internal class Program
     {
-        public static string BaseDirectory;
-        public static string Root;
-
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern IntPtr LoadLibrary(string libname);
 
@@ -21,17 +18,17 @@ namespace Y5Lib.NET
         {
             try
             {
-                BaseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                Root = args[0];
+                OE.BaseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                OE.Root = args[0];
 
-                Environment.CurrentDirectory = Root;
-                OE._LogPath = Path.Combine(Root, "log.txt");
+                Environment.CurrentDirectory = OE.Root;
+                OE._LogPath = Path.Combine(OE.Root, "log.txt");
 
                 OE.LogInfo("Y5Lib Start");
 
-                string libPath = Path.Combine(Root, "Y5Lib.dll");
+                string libPath = Path.Combine(OE.Root, "Y5Lib.dll");
 
-                OE.LogInfo("BaseDirectory: " + BaseDirectory);
+                OE.LogInfo("BaseDirectory: " + OE.BaseDirectory);
                 OE.LogInfo("OOELibrary path: " + libPath);
 
                 if (LoadLibrary(libPath) == IntPtr.Zero)
@@ -66,7 +63,7 @@ namespace Y5Lib.NET
                 Console.WriteLine("Initialize mod");
                 ModLoader.InitializeMods();
 
-                Environment.CurrentDirectory = BaseDirectory;
+                Environment.CurrentDirectory = OE.BaseDirectory;
 
                 Console.WriteLine("Y5Lib Initialized");
                 while (true)

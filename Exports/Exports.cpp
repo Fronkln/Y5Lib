@@ -17,6 +17,7 @@
 #include "CActionStageManagerExports.h"
 #include "CActionCCCManagerExports.h"
 #include "CActionHActManagerExports.h"
+#include "CActionHActCHPManager_Exports.h"
 #include "CSequenceManagerExports.h"
 #include "CLiveBtlPlayerExports.h"
 #include "CActionLiveBattleManagerExports.h"

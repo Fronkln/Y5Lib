@@ -10,7 +10,7 @@ namespace Y5Lib
     {
         internal static void InitializeMods()
         {
-            string modDir =  Path.Combine(NET.Program.BaseDirectory, "mods");
+            string modDir =  Path.Combine(OE.BaseDirectory, "mods");
 
             if (Directory.Exists(modDir))
             {
@@ -61,7 +61,7 @@ namespace Y5Lib
                 foreach (CustomAttributeData dat in loadedAssembly.CustomAttributes)
                     if (dat.AttributeType.FullName == typeof(Y5ModAttribute).FullName) // type comparing didnt work. so we compare names
                     {
-                        ProcessY5Mod(dat.ConstructorArguments);
+                        ProcessY5Mod(new FileInfo(path).Directory.FullName, dat.ConstructorArguments);
                         return true;
                     }
 
@@ -77,7 +77,7 @@ namespace Y5Lib
             }
         }
 
-        private static void ProcessY5Mod(IList<CustomAttributeTypedArgument> modInfo)
+        private static void ProcessY5Mod(string directoryFullPath, IList<CustomAttributeTypedArgument> modInfo)
         {
             string modName = (string)modInfo[0].Value;
             string modAuthor = (string)modInfo[1].Value;
@@ -95,7 +95,11 @@ namespace Y5Lib
                 object createdObj = Activator.CreateInstance(modType);
 
                 if (createdObj != null)
-                    modType.GetMethod("OnModInit", BindingFlags.Public | BindingFlags.Instance).Invoke(createdObj, null);
+                {
+                    Y5Mod mod = (Y5Mod)createdObj;
+                    mod.ModPath = directoryFullPath;
+                    mod.OnModInit();
+                }
                 else
                     OE.LogError("Mod class initialization for " + modName + " failed!");
             }

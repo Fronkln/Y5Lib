@@ -39,7 +39,7 @@ public:
 	char pad_0398[224]; //0x0398
 	void* N000081B0; //0x0478
 	char pad_0480[368]; //0x0480
-	class CActionHeatActionManager* N000081DF; //0x05F0
+	class CActionHActCHPManager* actionHActCHPManager; //0x05F0
 	char pad_05F8[24]; //0x05F8
 	class CActionCameraManager* actionCameraManager; //0x0610
 	char pad_0618[1040]; //0x0618
