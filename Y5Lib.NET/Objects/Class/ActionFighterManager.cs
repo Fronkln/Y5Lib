@@ -78,7 +78,6 @@ namespace Y5Lib
             Y5Lib_ActionFighterManager_SetPlayer(fighterIdx);
         }
 
-
         public static bool IsFighterPresent(int index)
         {
             return Y5Lib_ActionFighterManager_IsFighterPresent(index);
@@ -97,14 +96,6 @@ namespace Y5Lib
         public static int SpawnCharacter(DisposeInfo spawnInformation)
         {
             return Y5Lib_ActionFighterManager_AddToDisposeQueue(ref spawnInformation);
-        }
-
-        public static async Task<int> SpawnCharacterAsync(DisposeInfo spawnInformation)
-        {
-            int idx = Y5Lib_ActionFighterManager_AddToDisposeQueue(ref spawnInformation);
-            await Task.Delay(60);
-
-            return idx;
         }
     }
 }

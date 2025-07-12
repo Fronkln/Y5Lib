@@ -29,6 +29,9 @@ namespace Y5Lib
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_HACT_SET_TRANSFORM", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Y5Lib_HAct_SetTransform(IntPtr hact, Matrix4x4 mtx);
 
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_HACT_GETTER_PHASE", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Y5Lib_HAct_Getter_Phase(IntPtr hact);
+
         public string Name
         {
             get
@@ -61,6 +64,15 @@ namespace Y5Lib
                 return Y5Lib_HAct_GetEndFrame(Pointer);
             }
         }
+
+        public int Phase
+        {
+            get
+            {
+                return Y5Lib_HAct_Getter_Phase(Pointer);
+            }
+        }
+
 
         public int Flags
         {

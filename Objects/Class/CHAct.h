@@ -43,5 +43,7 @@ public:
 	float timeStep; //0x03D4
 	char pad_03D8[88]; //0x03D8
 	Matrix4x4 transform; //0x0430
-	char pad_0470[2504]; //0x0470
+	char pad_0470[192]; //0x0470
+	int32_t phase; //0x0530
+	char pad_0534[2308]; //0x0534
 }; //Size: 0x0E38

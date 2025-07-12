@@ -46,6 +46,14 @@ extern "C"
 		return hact->flags;
 	}
 
+	Y5LIB_EXPORT inline int32_t OE_LIB_HACT_GETTER_PHASE(CHAct* hact)
+	{
+		if (hact == nullptr)
+			return -1;
+
+		return hact->phase;
+	}
+
 	Y5LIB_EXPORT inline void OE_LIB_HACT_SET_FLAGS(CHAct* hact, int32_t flags)
 	{
 		if (hact == nullptr)
