@@ -97,6 +97,7 @@
     <Compile Include="Objects\Class\SequenceManager.cs" />
     <Compile Include="Objects\Class\UnmanagedObject.cs" />
     <Compile Include="Objects\Enum\InputDeviceType.cs" />
+    <Compile Include="Objects\Enum\JobPhase.cs" />
     <Compile Include="Objects\Enum\MotionID.cs" />
     <Compile Include="Objects\Enum\NPCType.cs" />
     <Compile Include="Objects\Enum\VirtualKey.cs" />

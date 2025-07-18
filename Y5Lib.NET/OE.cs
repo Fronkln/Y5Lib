@@ -84,13 +84,13 @@ namespace Y5Lib
         private static extern uint OELib_UnregisterJob(IntPtr deleg, uint type);
 
 
-        public static void RegisterJob(Action action, uint jobID, bool after = false)
+        public static void RegisterJob(Action action, JobPhase jobID, bool after = false)
         {
             RegisterJobDelegate del = new RegisterJobDelegate(action);
-            JobRegisterInfo inf = new JobRegisterInfo(action, del, Marshal.GetFunctionPointerForDelegate(del), jobID, after);
+            JobRegisterInfo inf = new JobRegisterInfo(action, del, Marshal.GetFunctionPointerForDelegate(del), (uint)jobID, after);
             _jobDelegates.Add(inf);
 
-            OELib_RegisterJob(inf.delPointer, jobID, after);
+            OELib_RegisterJob(inf.delPointer, (uint)jobID, after);
 
 
             LogInfo("Job for phase " + jobID.ToString() + " registered.");
