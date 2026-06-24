@@ -29,7 +29,7 @@ extern "C"
 		if (fman == nullptr)
 			return false;
 
-		return (fman->presentFighters & (static_cast<unsigned long long>(1) << 63 - index)) != 0;
+		return (fman->presentFighters & (static_cast<unsigned long long>(1) << (63 - index))) != 0;
 	}
 
 	Y5LIB_EXPORT inline void OE_LIB_ACTIONFIGHTERMANAGER_DESTROY_FIGHTER(int index)
@@ -42,7 +42,7 @@ extern "C"
 		if (fman == nullptr)
 			return;
 
-		unsigned long long val = (static_cast<unsigned long long>(1) << 63 - index);
+		unsigned long long val = (static_cast<unsigned long long>(1) << (63 - index));
 		fman->fightersToDestroy |= val;
 	}
 
@@ -83,5 +83,15 @@ extern "C"
 		int id = fman->AddToDisposeQueue(inf);
 
 		return id;
+	}
+
+	Y5LIB_EXPORT inline void OE_LIB_ACTIONFIGHTERMANAGER_PROCESS_DISPOSE_QUEUE(DisposeInfo* inf)
+	{
+		CActionFighterManager* fman = *OE::ActionFighterManager;
+
+		if (fman == nullptr)
+			return;
+
+		fman->ProcessDisposeQueue();
 	}
 }

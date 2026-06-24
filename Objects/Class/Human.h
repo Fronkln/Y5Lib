@@ -14,6 +14,51 @@ public:
 	char pad_0168[1208]; //0x0168
 	void* N00004915; //0x0620
 	char pad_0628[128]; //0x0628
+
+	virtual void VFunc51() {};
+	virtual void VFunc52() {};
+	virtual void VFunc53() {};
+	virtual void VFunc54() {};
+	virtual void VFunc55() {};
+	virtual void VFunc56() {};
+	virtual void VFunc57() {};
+	virtual void VFunc58() {};
+	virtual void VFunc59() {};
+	virtual void VFunc60() {};
+	virtual void VFunc61() {};
+	virtual void VFunc62() {};
+	virtual void VFunc63() {};
+	virtual void VFunc64() {};
+	virtual void VFunc65() {};
+	virtual void VFunc66() {};
+	virtual void VFunc67() {};
+	virtual void VFunc68() {};
+	virtual void VFunc69() {};
+	virtual void VFunc70() {};
+	virtual void VFunc71() {};
+	virtual void VFunc72() {};
+	virtual void VFunc73() {};
+	virtual void VFunc74() {};
+	virtual void VFunc75() {};
+	virtual void VFunc76() {};
+	virtual void VFunc77() {};
+	virtual void VFunc78() {};
+	virtual void VFunc79() {};
+	virtual void VFunc80() {};
+	virtual void VFunc81() {};
+	virtual void VFunc82() {};
+	virtual void VFunc83() {};
+	virtual void VFunc84() {};
+	virtual void VFunc85() {};
+	virtual void VFunc86() {};
+	virtual void VFunc87() {};
+	virtual void VFunc88() {};
+	virtual void VFunc89() {};
+	virtual void VFunc90() {};
+	virtual void VFunc91() {};
+	virtual void VFunc92() {};
+	virtual void VFunc93() {};
+	virtual void VFunc94() {};
 }; //Size: 0x06A4
 
 #pragma pack(pop)

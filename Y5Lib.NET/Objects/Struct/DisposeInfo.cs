@@ -53,22 +53,22 @@ namespace Y5Lib
         public ushort N0000054A;
 
         // Token: 0x040000DA RID: 218
-        public short N00004547;
+        public short Height;
 
         // Token: 0x040000DB RID: 219
         public byte N00004545;
 
         // Token: 0x040000DC RID: 220
-        public byte N0000454A;
+        public byte Voicer;
 
         // Token: 0x040000DD RID: 221
         public NPCType FighterType;
 
         // Token: 0x040000DE RID: 222
-        public byte N0000454B;
+        public byte Damage;
 
         // Token: 0x040000DF RID: 223
-        public byte Voicer;
+        public byte CtrlType;
 
         // Token: 0x040000E0 RID: 224
         public byte N00004552;
@@ -83,13 +83,14 @@ namespace Y5Lib
         public Vector4 spawnPosition;
 
         // Token: 0x040000E4 RID: 228
-        public uint N0000054E;
+        public ushort RotY;
+        public short RotYPad;
 
         // Token: 0x040000E5 RID: 229
         public FixedString32 battleStartAnim;
 
         // Token: 0x040000E6 RID: 230
-        public int N0000453C;
+        public int fighterUID;
 
         // Token: 0x040000E7 RID: 231
         public ushort N0000453F;

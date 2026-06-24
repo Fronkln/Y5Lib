@@ -59,6 +59,9 @@ namespace Y5Lib
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ENTITY_SET_POSITION", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Y5Lib_Entity_SetPosition(IntPtr ent, Vector4 pos);
 
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ENTITY_WARP_TO_POSITION", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void Y5Lib_Entity_WarpToPosition(IntPtr ent, Vector4 pos);
+
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ENTITY_GETTER_ROTATION_Y", CallingConvention = CallingConvention.Cdecl)]
         internal static extern ushort Y5Lib_Entity_Getter_RotationY(IntPtr ent);
 
@@ -78,6 +81,11 @@ namespace Y5Lib
             {
                 return new InputDeviceListener() { Pointer = Y5Lib_Entity_Getter_Input_Controller(Pointer) };
             }
+        }
+
+        public void WarpToPosition(Vector3 pos)
+        {
+            Y5Lib_Entity_WarpToPosition(Pointer, pos);
         }
     }
 }

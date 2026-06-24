@@ -27,7 +27,7 @@ extern "C"
 
 		hact->currentTime = frame;
 		hact->previousTime = frame;
-		hact->timeStep = frame / 0.240;
+		hact->timeStep = frame / 0.240f;
 	}
 
 	Y5LIB_EXPORT inline float OE_LIB_HACT_GET_END_FRAME(CHAct* hact)

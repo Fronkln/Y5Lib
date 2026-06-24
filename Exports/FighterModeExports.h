@@ -12,12 +12,36 @@ extern "C"
 			return fighterModeMan->currentMode;
 	}
 
+	Y5LIB_EXPORT inline void OE_LIB_FIGHTERMODEMANAGER_TODEADBYDAMAGE(FighterModeManager* fighterModeMan, DamageInfo* damage)
+	{
+		if (fighterModeMan == nullptr || damage == nullptr)
+			return;
+		else
+			fighterModeMan->ToDeadByDamage(damage);
+	}
+
+	Y5LIB_EXPORT inline void OE_LIB_FIGHTERMODEMANAGER_TOATTACK(FighterModeManager* fighterModeMan, FighterCommandID id)
+	{
+		if (fighterModeMan == nullptr)
+			return;
+		else
+			fighterModeMan->ToAttack(id);
+	}
+
 	Y5LIB_EXPORT inline void OE_LIB_FIGHTERMODEMANAGER_SET_COMMANDSET(FighterModeManager* fighterModeMan, const char* commandset)
 	{
 		if (fighterModeMan == nullptr)
 			return;
 		else
 			fighterModeMan->SetCommandset(0, commandset);
+	}
+
+	Y5LIB_EXPORT inline Fighter* OE_LIB_FIGHTERMODEMANAGER_GETTER_OWNER(FighterModeManager* fighterModeMan)
+	{
+		if (fighterModeMan == nullptr)
+			return 0;
+		else
+			return fighterModeMan->fighter;
 	}
 
 	Y5LIB_EXPORT inline char* OE_LIB_FIGHTERMODE_GETTER_NAME(FighterMode* fighterMode)

@@ -9,6 +9,7 @@ class CActionFighterManager;
 class CActionManager;
 class CActionEntityManager;
 class CSequenceManager;
+class CScenarioManager;
 
 typedef void(__cdecl* _OE_RegisterJob)();
 typedef void(__cdecl* _OE_CJob_Phase_Execute)(int job);
@@ -88,6 +89,7 @@ public:
     static CActionManager** ActionManager;
     static CActionEntityManager** ActionEntityManager;
     static CSequenceManager** SequenceManager;
+    static CScenarioManager** ScenarioManager;
 
     static void InitHook()
     {

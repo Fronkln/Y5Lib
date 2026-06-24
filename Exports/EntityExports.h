@@ -10,7 +10,8 @@ extern "C"
 		if (entity == nullptr)
 			return vec4f();
 
-		return entity->Position;
+		vec4f pos;
+		return entity->GetPosition(pos);
 	}
 
 	Y5LIB_EXPORT inline void OE_LIB_ENTITY_SET_POSITION(Entity* entity, vec4f value)
@@ -18,7 +19,15 @@ extern "C"
 		if (entity == nullptr)
 			return;
 
-		entity->Position = value;
+		entity->SetPosition(value);
+	}
+
+	Y5LIB_EXPORT inline void OE_LIB_ENTITY_WARP_TO_POSITION(Entity* entity, vec4f value)
+	{
+		if (entity == nullptr)
+			return;
+
+		entity->WarpToPosition(value);
 	}
 
 	Y5LIB_EXPORT inline unsigned short OE_LIB_ENTITY_GETTER_ROTATION_Y(Entity* entity)

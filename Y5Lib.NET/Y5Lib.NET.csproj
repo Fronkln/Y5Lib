@@ -61,10 +61,13 @@
     <Compile Include="ModLoader.cs" />
     <Compile Include="Objects\Class\ActionCameraManager.cs" />
     <Compile Include="Objects\Class\ActionCCCManager.cs" />
+    <Compile Include="Objects\Class\ActionCtrlTypeManager.cs" />
     <Compile Include="Objects\Class\ActionDanceBattleManager.cs" />
     <Compile Include="Objects\Class\ActionDanceEventManager.cs" />
+    <Compile Include="Objects\Class\ActionEnemyDisposeManager.cs" />
     <Compile Include="Objects\Class\ActionEntityManager.cs" />
     <Compile Include="Objects\Class\ActionFighterManager.cs" />
+    <Compile Include="Objects\Class\ActionFighterSyncManager.cs" />
     <Compile Include="Objects\Class\ActionHActCHPManager.cs" />
     <Compile Include="Objects\Class\ActionHActManager.cs" />
     <Compile Include="Objects\Class\ActionInputManager.cs" />
@@ -76,10 +79,13 @@
     <Compile Include="Objects\Class\CameraBase.cs" />
     <Compile Include="Objects\Class\ActionReactorManager.cs" />
     <Compile Include="Objects\Class\DanceBtlPlayer.cs" />
+    <Compile Include="Objects\Class\Enemy.cs" />
     <Compile Include="Objects\Class\Entity.cs" />
     <Compile Include="Objects\Class\EntityBase.cs" />
     <Compile Include="Objects\Class\EntityHandle.cs" />
     <Compile Include="Objects\Class\Fighter.cs" />
+    <Compile Include="Objects\Class\FighterCommandManager.cs" />
+    <Compile Include="Objects\Class\FighterController.cs" />
     <Compile Include="Objects\Class\FighterMode.cs" />
     <Compile Include="Objects\Class\FighterModeManager.cs" />
     <Compile Include="Objects\Class\HAct.cs" />
@@ -94,15 +100,24 @@
     <Compile Include="Objects\Class\Motion\EntityMotion.cs" />
     <Compile Include="Objects\Class\Motion\HumanMotion.cs" />
     <Compile Include="Objects\Class\Player.cs" />
+    <Compile Include="Objects\Class\ScenarioManager.cs" />
     <Compile Include="Objects\Class\SequenceManager.cs" />
     <Compile Include="Objects\Class\UnmanagedObject.cs" />
+    <Compile Include="Objects\Enum\BattlePhase.cs" />
+    <Compile Include="Objects\Enum\CFCMoveType.cs" />
+    <Compile Include="Objects\Enum\FighterFlag.cs" />
     <Compile Include="Objects\Enum\InputDeviceType.cs" />
     <Compile Include="Objects\Enum\JobPhase.cs" />
+    <Compile Include="Objects\Enum\MissionID.cs" />
     <Compile Include="Objects\Enum\MotionID.cs" />
     <Compile Include="Objects\Enum\NPCType.cs" />
     <Compile Include="Objects\Enum\VirtualKey.cs" />
+    <Compile Include="Objects\Struct\CFCMove.cs" />
     <Compile Include="Objects\Struct\ChecksumString.cs" />
+    <Compile Include="Objects\Struct\DamageInfo.cs" />
     <Compile Include="Objects\Struct\DisposeInfo.cs" />
+    <Compile Include="Objects\Struct\EnemyDisposeInfo.cs" />
+    <Compile Include="Objects\Struct\FighterCommandID.cs" />
     <Compile Include="Objects\Struct\FixedString32.cs" />
     <Compile Include="Objects\Struct\Matrix4x4.cs" />
     <Compile Include="Objects\Struct\PadInputInfo.cs" />
@@ -110,6 +125,9 @@
     <Compile Include="Objects\Struct\Vector2.cs" />
     <Compile Include="Objects\Struct\Vector3.cs" />
     <Compile Include="Objects\Struct\Vector4.cs" />
+    <Compile Include="Objects\Task\OOETask.cs" />
+    <Compile Include="Objects\Task\OOETaskTime.cs" />
+    <Compile Include="Objects\Task\OOETaskManager.cs" />
     <Compile Include="Objects\Y5ModAttribute.cs" />
     <Compile Include="OE.cs" />
     <Compile Include="Parless.cs" />
@@ -122,6 +140,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetDir)$(TargetName).exe" "E:\SteamLibrary\steamapps\common\Yakuza 5\main\srmm-libs\79f1ce9b-e09c-447a-a3e8-a36ce886e1b0\Y5Lib\Y5Lib.NET.dll"</PostBuildEvent>
+    <PostBuildEvent>copy /Y "$(TargetDir)$(TargetName).exe" "C:\Program Files (x86)\Steam\steamapps\common\Yakuza 5\main\srmm-libs\79f1ce9b-e09c-447a-a3e8-a36ce886e1b0\Y5Lib\Y5Lib.NET.dll"</PostBuildEvent>
   </PropertyGroup>
 </Project>

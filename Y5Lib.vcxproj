@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -87,7 +87,7 @@
       <EnableUAC>false</EnableUAC>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y "$(TargetDir)$(ProjectName).dll" "E:\SteamLibrary\steamapps\common\Yakuza 5\main\srmm-libs\79f1ce9b-e09c-447a-a3e8-a36ce886e1b0\Y5Lib\$(ProjectName).dll"</Command>
+      <Command>copy /Y "$(TargetDir)$(ProjectName).dll" "C:\Program Files (x86)\Steam\steamapps\common\Yakuza 5\main\srmm-libs\79f1ce9b-e09c-447a-a3e8-a36ce886e1b0\Y5Lib\$(ProjectName).dll"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -102,6 +102,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(ProjectDir)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <StructMemberAlignment>Default</StructMemberAlignment>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -111,7 +112,7 @@
       <EnableUAC>false</EnableUAC>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y "$(TargetDir)$(ProjectName).dll" "E:\SteamLibrary\steamapps\common\Yakuza 5\main\srmm-libs\79f1ce9b-e09c-447a-a3e8-a36ce886e1b0\Y5Lib\$(ProjectName).dll"</Command>
+      <Command>copy /Y "$(TargetDir)$(ProjectName).dll" "C:\Program Files (x86)\Steam\steamapps\common\Yakuza 5\main\srmm-libs\79f1ce9b-e09c-447a-a3e8-a36ce886e1b0\Y5Lib\$(ProjectName).dll"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -131,7 +132,7 @@
       <EnableUAC>false</EnableUAC>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y "$(TargetDir)$(ProjectName).dll" "E:\SteamLibrary\steamapps\common\Yakuza 5\main\srmm-libs\79f1ce9b-e09c-447a-a3e8-a36ce886e1b0\Y5Lib\$(ProjectName).dll"</Command>
+      <Command>copy /Y "$(TargetDir)$(ProjectName).dll" "C:\Program Files (x86)\Steam\steamapps\common\Yakuza 5\main\srmm-libs\79f1ce9b-e09c-447a-a3e8-a36ce886e1b0\Y5Lib\$(ProjectName).dll"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -147,6 +148,7 @@
       <AdditionalIncludeDirectories>$(ProjectDir)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <StructMemberAlignment>Default</StructMemberAlignment>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -156,14 +158,24 @@
       <EnableUAC>false</EnableUAC>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y "$(TargetDir)$(ProjectName).dll" "E:\SteamLibrary\steamapps\common\Yakuza 5\main\srmm-libs\79f1ce9b-e09c-447a-a3e8-a36ce886e1b0\Y5Lib\$(ProjectName).dll"</Command>
+      <Command>copy /Y "$(TargetDir)$(ProjectName).dll" "C:\Program Files (x86)\Steam\steamapps\common\Yakuza 5\main\srmm-libs\79f1ce9b-e09c-447a-a3e8-a36ce886e1b0\Y5Lib\$(ProjectName).dll"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\OE Library .NET\OE Library\RE\Struct\vec.h" />
     <ClInclude Include="CActionFighterManager.h" />
     <ClInclude Include="CActionManager.h" />
-    <ClInclude Include="CSequenceManager.h" />
+    <ClInclude Include="Exports\CActionCtrlTypeManagerExports.h" />
+    <ClInclude Include="Exports\CActionEnemyDisposeManagerExports.h" />
+    <ClInclude Include="Exports\CActionFighterSyncManagerExports.h" />
+    <ClInclude Include="Exports\CScenarioManagerExports.h" />
+    <ClInclude Include="Exports\FighterCommandManagerExports.h" />
+    <ClInclude Include="Exports\FighterController_Exports.h" />
+    <ClInclude Include="Objects\Class\CActionCtrlTypeManager.h" />
+    <ClInclude Include="Objects\Class\CActionEnemyDisposeManager.h" />
+    <ClInclude Include="Objects\Class\CActionFighterSyncManager.h" />
+    <ClInclude Include="Objects\Class\CScenarioManager.h" />
+    <ClInclude Include="Objects\Class\CSequenceManager.h" />
     <ClInclude Include="defines.h" />
     <ClInclude Include="Exports\CActInputDeviceManagerExports.h" />
     <ClInclude Include="Exports\CActionCameraManagerExports.h" />
@@ -183,6 +195,7 @@
     <ClInclude Include="Exports\CInputDeviceListenerExports.h" />
     <ClInclude Include="Exports\FighterModeExports.h" />
     <ClInclude Include="Exports\HumanModelExports.h" />
+    <ClInclude Include="Exports\Player_Exports.h" />
     <ClInclude Include="MemoryMgr.h" />
     <ClInclude Include="Objects\Class\CActInputDeviceManager.h" />
     <ClInclude Include="Objects\Class\CActionCCCManager.h" />
@@ -215,18 +228,28 @@
     <ClInclude Include="Objects\Class\CInputDeviceListener.h" />
     <ClInclude Include="Objects\Class\CLiveBtlPlayer.h" />
     <ClInclude Include="Objects\Class\CDancer.h" />
+    <ClInclude Include="Objects\Class\CSIXAXISListener.h" />
+    <ClInclude Include="Objects\Class\Enemy.h" />
     <ClInclude Include="Objects\Class\Entity.h" />
     <ClInclude Include="Objects\Class\EntityBase.h" />
     <ClInclude Include="Objects\Class\EntityMotion.h" />
     <ClInclude Include="Objects\Class\Fighter.h" />
+    <ClInclude Include="Objects\Class\FighterCommandManager.h" />
+    <ClInclude Include="Objects\Class\FighterController.h" />
     <ClInclude Include="Objects\Class\FighterMode.h" />
     <ClInclude Include="Objects\Class\FighterMotion.h" />
     <ClInclude Include="Objects\Class\Human.h" />
     <ClInclude Include="Objects\Class\HumanModel.h" />
     <ClInclude Include="Objects\Class\HumanMotion.h" />
     <ClInclude Include="Objects\Class\MotionThingy.h" />
+    <ClInclude Include="Objects\Class\Player.h" />
     <ClInclude Include="Objects\Class\UnknownMotionComponent.h" />
+    <ClInclude Include="Objects\Struct\CFCMove.h" />
+    <ClInclude Include="Objects\Struct\DamageInfo.h" />
     <ClInclude Include="Objects\Struct\DisposeInfo.h" />
+    <ClInclude Include="Objects\Struct\EnemyDisposeInfo.h" />
+    <ClInclude Include="Objects\Struct\FighterCombatInfo.h" />
+    <ClInclude Include="Objects\Struct\FighterCommandID.h" />
     <ClInclude Include="Objects\Struct\matrix.h" />
     <ClInclude Include="Objects\Struct\MissionData.h" />
     <ClInclude Include="Objects\Struct\pxd_hash.h" />
@@ -237,6 +260,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CActionManager.cpp" />
+    <ClCompile Include="Objects\Class\CActionCtrlTypeManager.cpp" />
+    <ClCompile Include="Objects\Class\CActionEnemyDisposeManager.cpp" />
+    <ClCompile Include="Objects\Class\CActionFighterSyncManager.cpp" />
+    <ClCompile Include="Objects\Class\CScenarioManager.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="CActionFighterManager.cpp" />
     <ClCompile Include="CActionEntityManager.cpp" />
@@ -245,8 +272,12 @@
     <ClCompile Include="Objects\Class\CActionMotionManager.cpp" />
     <ClCompile Include="Objects\Class\CActionReactorManager.cpp" />
     <ClCompile Include="Objects\Class\CLiveBtlPlayer.cpp" />
+    <ClCompile Include="Objects\Class\CSequenceManager.cpp" />
+    <ClCompile Include="Objects\Class\Fighter.cpp" />
+    <ClCompile Include="Objects\Class\FighterCommandManager.cpp" />
     <ClCompile Include="Objects\Class\FighterMode.cpp" />
     <ClCompile Include="Objects\Class\HumanMotion.cpp" />
+    <ClCompile Include="Objects\Class\Player.cpp" />
     <ClCompile Include="OE.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

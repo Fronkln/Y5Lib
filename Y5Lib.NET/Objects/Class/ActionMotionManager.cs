@@ -12,8 +12,21 @@ namespace Y5Lib
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONMOTIONMANAGER_LOAD_GMT", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr LoadGMT(uint gmtID);
 
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONMOTIONMANAGER_LOAD_PAR", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void LoadPar(string path);
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONMOTIONMANAGER_LOAD_PAR_WITH_ID", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void LoadParWithID(int id, int unknown);
+
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONMOTIONMANAGER_IS_MOTION_PAR_ID_LOADED", CallingConvention = CallingConvention.Cdecl)]
+        [return:MarshalAs(UnmanagedType.U1)]
+        public static extern bool IsMotionParIDLoaded(int id);
+
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONMOTIONMANAGER_GET_GMT_ID", CallingConvention = CallingConvention.Cdecl)]
         public static extern uint GetGMTID(string name);
+
+
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONMOTIONMANAGER_LOAD_IMPORTANT_RESOURCES", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void LoadImportantResources(bool isBattle);
 
         public static void LoadGMT(string name)
         {
@@ -24,5 +37,6 @@ namespace Y5Lib
 
             LoadGMT(id);
         }
+
     }
 }

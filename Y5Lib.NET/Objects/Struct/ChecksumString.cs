@@ -15,6 +15,11 @@ namespace Y5Lib
             return str.ToNullTerminatedString();
         }
 
+        public char[] GetChars()
+        {
+            return str;
+        }
+
         public void Set(string val)
         {
             if (str == null || str.Length <= 0)

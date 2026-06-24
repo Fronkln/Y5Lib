@@ -26,6 +26,9 @@ namespace Y5Lib
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONFIGHTERMANAGER_ADD_TO_DISPOSE_QUEUE", CallingConvention = CallingConvention.Cdecl)]
         internal static extern int Y5Lib_ActionFighterManager_AddToDisposeQueue(ref DisposeInfo spawnInf);
 
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONFIGHTERMANAGER_PROCESS_DISPOSE_QUEUE", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void ProcessDisposeQueue();
+
         public static Fighter Player { get { return new Fighter() { Pointer = Y5Lib_ActionFighterManager_GetPlayer() }; } }
 
 

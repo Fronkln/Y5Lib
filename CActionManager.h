@@ -25,7 +25,7 @@ public:
 	char pad_0164[132]; //0x0164
 	float speed[15]; //0x01E8
 	char pad_0224[44]; //0x0224
-	class CActionControlTypeManager* controlTypeManager; //0x0250
+	class CActionCtrlTypeManager* controlTypeManager; //0x0250
 	class CActionFighterManager* actionFighterManager; //0x0258
 	class CActionMotionManager* actionMotionManager; //0x0260
 	class CActionFighterManager* actionFighterManager2; //0x0268
@@ -51,6 +51,10 @@ public:
 	class N00003DAE* N0000826C; //0x0A58
 	class CActionDanceBattleManager* danceBattleManager; //0x0A60
 	class CActionDanceEventManager* danceEventManager; //0x0A68
-	char pad_0A70[11672]; //0x0A70
+	char pad_0A70[16]; //0x0A70
+	class CActionEnemyDisposeManager* enemyDisposeManager; //0x0A80
+	char pad_0A88[240]; //0x0A88
+	class CActionSnowballManager* snowballManager; //0x0B78
+	char pad_0B80[11400]; //0x0B80
 }; //Size: 0x1808
 #pragma pack(pop, 1)

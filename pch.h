@@ -12,6 +12,7 @@
 #include "Objects/Struct/vec.h"
 #include "Objects/Struct/matrix.h"
 #include "Objects/Struct/pxd_hash.h"
+#include "Objects/Struct/FighterCommandID.h"
 #include <cstdint>
 #include <algorithm>
 #include <vector>

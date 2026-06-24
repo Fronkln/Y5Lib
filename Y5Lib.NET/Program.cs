@@ -24,6 +24,7 @@ namespace Y5Lib.NET
 
                 //Environment.CurrentDirectory = OE.Root;
                 OE._LogPath = Path.Combine(OE.Root, "log.txt");
+                File.WriteAllLines(OE._LogPath, new string[0]);
 
                 OE.LogInfo("Y5Lib Start");
 
@@ -67,11 +68,8 @@ namespace Y5Lib.NET
         {
             while (!OE.IsInitialized())
             {
-#if DEBUG
-                OE.LogInfo("Proccing initialization");
-
-#endif
                 OE.Init();
+                Thread.Sleep(10);
             }
 
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
@@ -80,6 +78,8 @@ namespace Y5Lib.NET
             ModLoader.InitializeMods();
 
             Environment.CurrentDirectory = OE.BaseDirectory;
+
+            OE.RegisterJob(OOETaskManager.Update, JobPhase.Camera);
 
             Console.WriteLine("Y5Lib Initialized");
         }

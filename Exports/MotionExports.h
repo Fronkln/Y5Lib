@@ -42,6 +42,14 @@ extern "C"
 		mot->rotY = angle;
 	}
 
+	Y5LIB_EXPORT inline vec4f OE_LIB_HUMANMOTION_GET_POSITION(Motion::HumanMotion* mot)
+	{
+		if (mot == nullptr)
+			return vec4f();
+
+		return mot->Position;
+	}
+
 	Y5LIB_EXPORT inline Matrix4x4 OE_LIB_BONEMOTION_GETTER_MATRIX(Motion::BoneMotion* mot)
 	{
 		if (mot == nullptr)

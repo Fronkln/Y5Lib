@@ -3,7 +3,7 @@
 #include "OE.h"	
 #include "Objects/Struct/DisposeInfo.h"
 #include "Objects/Class/Fighter.h"
-#include "CSequenceManager.h"
+#include "Objects/Class/CSequenceManager.h"
 #include "CActionManager.h"
 
 extern "C"
@@ -14,6 +14,7 @@ extern "C"
 		OE::ActionManager = (CActionManager**)(resolve_relative_addr((PatternScan(GetModuleHandle(NULL), "48 8B 05 ?? ?? ?? ?? 48 85 C0 74 ?? 48 8B 88 78 02 00 00 EB ?? 49 8B CC E8 ?? ?? ?? ?? 85 C0")), 7));
 		OE::ActionEntityManager = (CActionEntityManager**)(resolve_relative_addr((PatternScan(GetModuleHandle(NULL), "48 8B 0D ? ? ? ? E8 ? ? ? ? 48 8B 07 48 8B CF FF 50 08 E9 ? ? ? ?")), 7));
 		OE::SequenceManager = (CSequenceManager**)(resolve_relative_addr((PatternScan(GetModuleHandle(NULL), "48 8B 05 ? ? ? ? 44 8B 88 88 00 00 00")), 7));
+		OE::ScenarioManager = (CScenarioManager**)(resolve_relative_addr((PatternScan(GetModuleHandle(NULL), "48 8B 0D ? ? ? ? 45 33 C0 E8 ? ? ? ? F6 85")), 7));
 
 		OE::InitHook();
 	}

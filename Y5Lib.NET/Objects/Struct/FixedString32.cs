@@ -11,6 +11,8 @@ namespace Y5Lib
 
         public string Text { get { return new string(str); } }
 
+        public char[] GetChars() { return str; }
+
         public void Set(string val)
         {
             if (str == null || str.Length <= 0)
