@@ -36,6 +36,19 @@ extern "C"
 			fighterModeMan->SetCommandset(0, commandset);
 	}
 
+	Y5LIB_EXPORT inline FighterCommandID OE_LIB_FIGHTERMODEMANAGER_GET_CURRENT_COMMAND(FighterModeManager* fighterModeMan)
+	{
+		if (fighterModeMan == nullptr)
+			return FighterCommandID();
+		else
+		{
+			FighterCommandID result;
+			fighterModeMan->GetCurrentCommand(result);
+
+			return result;
+		}
+	}
+
 	Y5LIB_EXPORT inline Fighter* OE_LIB_FIGHTERMODEMANAGER_GETTER_OWNER(FighterModeManager* fighterModeMan)
 	{
 		if (fighterModeMan == nullptr)

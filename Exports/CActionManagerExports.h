@@ -6,6 +6,19 @@
 
 extern "C"
 {
+    Y5LIB_EXPORT inline void* OE_LIB_ACTIONMANAGER_GET_ACTION(int actionID)
+    {
+        CActionManager* actMan = *OE::ActionManager;
+
+        if (actMan == nullptr)
+            return 0;
+
+        __int64 actionsStart = ((__int64)actMan) + 0x238;
+        actionsStart += actionID * 8;
+
+        return *(void**)actionsStart;
+    }
+
     Y5LIB_EXPORT inline unsigned int OE_LIB_ACTIONMANAGER_GETTER_UNPAUSED_TIME()
     {
         CActionManager* actMan = *OE::ActionManager;

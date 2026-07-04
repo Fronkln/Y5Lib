@@ -5,6 +5,26 @@
 
 extern "C"
 {
+    Y5LIB_EXPORT inline void* OE_LIB_SEQUENCEMANAGER_GETTER_SEQUENCECOMMANDDEF()
+    {
+        CSequenceManager* seqMan = *OE::SequenceManager;
+
+        if (seqMan == nullptr)
+            return 0;
+
+        return seqMan->sequenceCommandDef;
+    }
+
+    Y5LIB_EXPORT inline void* OE_LIB_SEQUENCEMANAGER_GETTER_CURRENT_MISSION_DATA()
+    {
+        CSequenceManager* seqMan = *OE::SequenceManager;
+
+        if (seqMan == nullptr)
+            return 0;
+
+        return seqMan->missionData;
+    }
+
     Y5LIB_EXPORT inline unsigned int OE_LIB_SEQUENCEMANAGER_GETTER_CURRENT_MISSION()
     {
         CSequenceManager* seqMan = *OE::SequenceManager;
@@ -13,6 +33,26 @@ extern "C"
             return 0;
 
         return seqMan->missionData->missionID;
+    }
+
+    Y5LIB_EXPORT inline int OE_LIB_SEQUENCEMANAGER_GETTER_CURRENT_STAGE_ID()
+    {
+        CSequenceManager* seqMan = *OE::SequenceManager;
+
+        if (seqMan == nullptr)
+            return 0;
+
+        return seqMan->missionData->stageID;
+    }
+
+    Y5LIB_EXPORT inline int OE_LIB_SEQUENCEMANAGER_GETTER_CURRENT_UNKNOWN_MODE()
+    {
+        CSequenceManager* seqMan = *OE::SequenceManager;
+
+        if (seqMan == nullptr)
+            return 0;
+
+        return seqMan->missionData->someMode;
     }
 
     Y5LIB_EXPORT inline unsigned int OE_LIB_SEQUENCEMANAGER_GETTER_NEXT_MISSION()
@@ -45,16 +85,6 @@ extern "C"
         return seqMan->isLoading;
     }
 
-    Y5LIB_EXPORT inline void OE_LIB_SEQUENCEMANAGER_SET_NEXT_MISSION_ID(unsigned int missionID)
-    {
-        CSequenceManager* seqMan = *OE::SequenceManager;
-
-        if (seqMan == nullptr || seqMan->nextMissionData == nullptr)
-            return;
-
-        seqMan->nextMissionData->missionID = missionID;
-    }
-
     Y5LIB_EXPORT inline int OE_LIB_SEQUENCEMANAGER_GETTER_CURRENT_MISSION_SCENARIO()
     {
         CSequenceManager* seqMan = *OE::SequenceManager;
@@ -73,6 +103,36 @@ extern "C"
             return 0;
 
         return seqMan->nextMissionData->scenarioID;
+    }
+
+    Y5LIB_EXPORT inline int OE_LIB_SEQUENCEMANAGER_GETTER_NEXT_STAGE_ID()
+    {
+        CSequenceManager* seqMan = *OE::SequenceManager;
+
+        if (seqMan == nullptr || seqMan->nextMissionData == nullptr)
+            return 0;
+
+        return seqMan->nextMissionData->stageID;
+    }
+
+    Y5LIB_EXPORT inline int OE_LIB_SEQUENCEMANAGER_GETTER_NEXT_UNKNOWN_MODE()
+    {
+        CSequenceManager* seqMan = *OE::SequenceManager;
+
+        if (seqMan == nullptr || seqMan->nextMissionData == nullptr)
+            return 0;
+
+        return seqMan->nextMissionData->someMode;
+    }
+
+    Y5LIB_EXPORT inline vec4f OE_LIB_SEQUENCEMANAGER_GETTER_NEXT_PLAYER_POSITION()
+    {
+        CSequenceManager* seqMan = *OE::SequenceManager;
+
+        if (seqMan == nullptr || seqMan->nextMissionData == nullptr)
+            return vec3f();
+
+        return seqMan->nextMissionData->playerPosition;
     }
 
     Y5LIB_EXPORT inline void OE_LIB_SEQUENCEMANAGER_SET_NEXT_MISSION_SCENARIO(unsigned int scenarioID)
@@ -123,5 +183,55 @@ extern "C"
             return;
 
         seqMan->missionData->prohibitTransition = !allow;
+    }
+
+    Y5LIB_EXPORT inline void OE_LIB_SEQUENCEMANAGER_SET_NEXT_MISSION_ID(unsigned int mission)
+    {
+        CSequenceManager* seqMan = *OE::SequenceManager;
+
+        if (seqMan == nullptr)
+            return;
+
+        seqMan->nextMissionData->missionID = mission;
+    }
+
+    Y5LIB_EXPORT inline void OE_LIB_SEQUENCEMANAGER_SET_NEXT_SCENARIO_ID(unsigned int scenario)
+    {
+        CSequenceManager* seqMan = *OE::SequenceManager;
+
+        if (seqMan == nullptr)
+            return;
+
+        seqMan->nextMissionData->scenarioID = scenario;
+    }
+
+    Y5LIB_EXPORT inline void OE_LIB_SEQUENCEMANAGER_SET_NEXT_STAGE(int stage)
+    {
+        CSequenceManager* seqMan = *OE::SequenceManager;
+
+        if (seqMan == nullptr)
+            return;
+
+        seqMan->nextMissionData->stageID = stage;
+    }
+
+    Y5LIB_EXPORT inline void OE_LIB_SEQUENCEMANAGER_SET_NEXT_UNKNOWN_MODE(int mode)
+    {
+        CSequenceManager* seqMan = *OE::SequenceManager;
+
+        if (seqMan == nullptr)
+            return;
+
+        seqMan->nextMissionData->someMode = mode;
+    }
+
+    Y5LIB_EXPORT inline void OE_LIB_SEQUENCEMANAGER_SET_NEXT_PLAYER_POSITION(vec3f position)
+    {
+        CSequenceManager* seqMan = *OE::SequenceManager;
+
+        if (seqMan == nullptr)
+            return;
+
+        seqMan->nextMissionData->playerPosition = position;
     }
 }

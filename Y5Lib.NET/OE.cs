@@ -9,6 +9,9 @@ namespace Y5Lib
     {
         public static class CPP
         {
+            [DllImport("Y5Lib.dll", EntryPoint = "LIB_UNSAFE_ALLOC_BUFFER", CallingConvention = CallingConvention.Cdecl)]
+            public static extern IntPtr AllocBuffer(IntPtr origin);
+
             [DllImport("Y5Lib.dll", EntryPoint = "LIB_UNSAFE_NOP", CallingConvention = CallingConvention.Cdecl)]
             public static extern void NopMemory(IntPtr memory, uint len);
 
@@ -24,6 +27,9 @@ namespace Y5Lib
 
             [DllImport("Y5Lib.dll", EntryPoint = "LIB_READ_CALL", CallingConvention = CallingConvention.Cdecl)]
             public static extern IntPtr ReadCall(IntPtr addr);
+
+            [DllImport("Y5Lib.dll", EntryPoint = "LIB_WRITE_CALL", CallingConvention = CallingConvention.Cdecl)]
+            public static extern void WriteCall(IntPtr addr, IntPtr func);
 
             public static void PatchMemory(IntPtr addr, params byte[] bytes)
             {

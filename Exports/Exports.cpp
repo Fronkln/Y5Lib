@@ -12,6 +12,7 @@
 #include "MotionExports.h"
 #include "CHActExports.h"
 #include "CActionManagerExports.h"
+#include "CActionAuthManagerExports.h"
 #include "CActionFighterManagerExports.h"
 #include "CActionFighterSyncManagerExports.h"
 #include "CActionCtrlTypeManagerExports.h"
@@ -21,6 +22,7 @@
 #include "CActionCameraManagerExports.h"
 #include "CActionReactorManagerExports.h"
 #include "CActionStageManagerExports.h"
+#include "CActionSoundManagerExports.h";
 #include "CActionCCCManagerExports.h"
 #include "CActionHActManagerExports.h"
 #include "CActionHActCHPManager_Exports.h"
@@ -33,6 +35,7 @@
 #include "CActInputDeviceManagerExports.h"
 #include "CInputDeviceListenerExports.h"
 #include "MemoryMgr.h"
+#include "buffer.h"
 
 extern "C"
 {
@@ -60,5 +63,15 @@ extern "C"
     Y5LIB_EXPORT inline void* LIB_READ_CALL(void* addr)
     {
         return (void*)Memory::ReadCall2(addr);
+    };
+
+    Y5LIB_EXPORT inline void LIB_WRITE_CALL(void* addr, void* func)
+    {
+        Memory::InjectHook(addr, func);
+    };
+
+    Y5LIB_EXPORT inline void* LIB_UNSAFE_ALLOC_BUFFER(void* origin)
+    {
+        return AllocateBuffer(origin);
     };
 }

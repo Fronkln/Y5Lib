@@ -26,6 +26,9 @@ namespace Y5Lib
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool IsPaused();
 
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONMANAGER_GET_ACTION", CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr GetAction(int actionID);
+
 
 
         /// <summary>

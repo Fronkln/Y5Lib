@@ -26,9 +26,13 @@ public:
 }; //Size: 0x00B0
 
 typedef void* (__fastcall* FIGHTERMODEMANAGER_SetCommandSet)(FighterModeManager* fModeMan, int unk1, const char* commandsetName);
+typedef FighterCommandID* (__fastcall* FIGHTERMODEMANAGER_GetCurrentCommand)(FighterModeManager* fModeMan, FighterCommandID& in_command);
 
 class FighterModeManager
 {
+	static FIGHTERMODEMANAGER_SetCommandSet ASM_SetCommandset;
+	static FIGHTERMODEMANAGER_GetCurrentCommand ASM_GetCurrentCommand;
+
 public:
 	class FighterMode* currentMode; //0x0008
 	class FighterMode* nextMode; //0x0010
@@ -39,11 +43,14 @@ public:
 	class FMDamageModule* DamageModule; //0x01B8
 	char pad_01C0[176]; //0x01C0
 
-	static FIGHTERMODEMANAGER_SetCommandSet ASM_SetCommandset;
-
 	void SetCommandset(int unk1, const char* commandsetName)
 	{
 		ASM_SetCommandset(this, unk1, commandsetName);
+	}
+
+	FighterCommandID* GetCurrentCommand(FighterCommandID& in_command)
+	{
+		return ASM_GetCurrentCommand(this, in_command);
 	}
 
 	//Function definitions may be placeholder (missing arguments etc...)

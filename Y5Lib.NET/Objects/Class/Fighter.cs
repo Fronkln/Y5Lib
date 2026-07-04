@@ -11,6 +11,24 @@ namespace Y5Lib
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTER_SETTER_HEALTH", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Y5Lib_Fighter_Setter_Health(IntPtr fighter, ushort health);
 
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTER_GETTER_MAXHEALTH", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern ushort Y5Lib_Fighter_Getter_MaxHealth(IntPtr fighter);
+
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTER_SETTER_MAXHEALTH", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void Y5Lib_Fighter_Setter_MaxHealth(IntPtr fighter, ushort health);
+
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTER_GETTER_HEAT", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern ushort Y5Lib_Fighter_Getter_Heat(IntPtr fighter);
+
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTER_SETTER_HEAT", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void Y5Lib_Fighter_Setter_Heat(IntPtr fighter, ushort heat);
+
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTER_GETTER_MAXHEAT", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern ushort Y5Lib_Fighter_Getter_MaxHeat(IntPtr fighter);
+
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTER_SETTER_MAXHEAT", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void Y5Lib_Fighter_Setter_MaxHeat(IntPtr fighter, ushort heat);
+
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTER_GETTER_DISPOSE_INFO", CallingConvention = CallingConvention.Cdecl)]
         internal static extern IntPtr Y5Lib_Fighter_Getter_DisposeInfo(IntPtr fighter);
 
@@ -65,9 +83,18 @@ namespace Y5Lib
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTER_TODEAD", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Y5Lib_Fighter_ToDead(IntPtr fighter);
 
-
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTER_GETTER_FLAGS", CallingConvention = CallingConvention.Cdecl)]
         internal static extern uint Y5Lib_Fighter_Getter_FighterFlags(IntPtr fighter);
+
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTER_GETTER_SYNC_SERIAL", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Y5Lib_Fighter_Getter_SyncSerial(IntPtr fighter);
+
+
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTER_GETTER_FUID", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Y5Lib_Fighter_Getter_FUID(IntPtr fighter);
+
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTER_SETTER_FUID", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void Y5Lib_Fighter_Setter_FUID(IntPtr fighter, int fuid);
 
 
         public FighterFlag Flags
@@ -88,6 +115,45 @@ namespace Y5Lib
             set
             {
                 Y5Lib_Fighter_Setter_Health(Pointer, value);
+            }
+        }
+
+        public ushort MaxHealth
+        {
+
+            get
+            {
+                return Y5Lib_Fighter_Getter_MaxHealth(Pointer);
+            }
+            set
+            {
+                Y5Lib_Fighter_Setter_MaxHealth(Pointer, value);
+            }
+        }
+
+        public ushort Heat
+        {
+
+            get
+            {
+                return Y5Lib_Fighter_Getter_Heat(Pointer);
+            }
+            set
+            {
+                Y5Lib_Fighter_Setter_Heat(Pointer, value);
+            }
+        }
+
+        public ushort MaxHeat
+        {
+
+            get
+            {
+                return Y5Lib_Fighter_Getter_MaxHeat(Pointer);
+            }
+            set
+            {
+                Y5Lib_Fighter_Setter_MaxHeat(Pointer, value);
             }
         }
 
@@ -207,11 +273,56 @@ namespace Y5Lib
         }
 
         /// <summary>
+        /// The unique fighter UID of this character
+        /// </summary>
+        public int FUID
+        {
+            get => Y5Lib_Fighter_Getter_FUID(Pointer);
+            set => Y5Lib_Fighter_Setter_FUID(Pointer, value);
+        }
+
+        public int SyncSerial
+        {
+            get
+            {
+                return Y5Lib_Fighter_Getter_SyncSerial(Pointer);
+            }
+        }
+
+
+        public SyncRegisterData SyncData
+        {
+            get
+            {
+                return ActionFighterSyncManager.GetSyncDataBySerial(SyncSerial);
+            }
+        }
+
+        /// <summary>
+        /// Is sy1 in sync
+        /// </summary>
+        /// <returns></returns>
+        public bool IsSyncTarget()
+        {
+            var syncData = SyncData;
+
+            if (SyncData.Pointer == IntPtr.Zero)
+                return false;
+
+            return SyncData.GetPairFighterIndex(0) != Index;
+        }
+
+        /// <summary>
         /// AI fighters only
         /// </summary>
         public void SetThinkMode(int mode)
         {
             Y5Lib_Fighter_SetAllowThink(Pointer, mode);
+        }
+
+        public bool IsSync()
+        {
+            return SyncSerial != -1;
         }
 
         public bool IsDead()

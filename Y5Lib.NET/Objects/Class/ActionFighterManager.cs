@@ -17,6 +17,9 @@ namespace Y5Lib
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONFIGHTERMANAGER_GET_FIGHTER", CallingConvention = CallingConvention.Cdecl)]
         internal static extern IntPtr Y5Lib_ActionFighterManager_GetFighter(int index);
 
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONFIGHTERMANAGER_GET_FIGHTER_BY_UID", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern IntPtr Y5Lib_ActionFighterManager_GetFighterByUID(int UID);
+
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONFIGHTERMANAGER_GET_PLAYER", CallingConvention = CallingConvention.Cdecl)]
         internal static extern IntPtr Y5Lib_ActionFighterManager_GetPlayer();
 
@@ -94,6 +97,11 @@ namespace Y5Lib
         public static Fighter GetFighter(int index)
         {
             return new Fighter() { Pointer = Y5Lib_ActionFighterManager_GetFighter(index) };
+        }
+
+        public static Fighter GetFighterByUID(int uid)
+        {
+            return new Fighter() { Pointer = Y5Lib_ActionFighterManager_GetFighterByUID(uid) };
         }
 
         public static int SpawnCharacter(DisposeInfo spawnInformation)

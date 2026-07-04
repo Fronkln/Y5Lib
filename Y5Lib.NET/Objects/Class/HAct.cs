@@ -32,6 +32,12 @@ namespace Y5Lib
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_HACT_GETTER_PHASE", CallingConvention = CallingConvention.Cdecl)]
         internal static extern int Y5Lib_HAct_Getter_Phase(IntPtr hact);
 
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_HACT_GETTER_STATUS", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Y5Lib_HAct_Getter_Status(IntPtr hact);
+
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_HACT_GETTER_STREAM_HANDLE", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern long Y5Lib_HAct_Getter_StreamHandle(IntPtr hact);
+
         public string Name
         {
             get
@@ -73,6 +79,14 @@ namespace Y5Lib
             }
         }
 
+        public int Status
+        {
+            get
+            {
+                return Y5Lib_HAct_Getter_Status(Pointer);
+            }
+        }
+
 
         public int Flags
         {
@@ -83,6 +97,14 @@ namespace Y5Lib
             set
             {
                 Y5Lib_HAct_SetFlags(Pointer, value);
+            }
+        }
+
+        public long StreamHandle
+        {
+            get
+            {
+                return Y5Lib_HAct_Getter_StreamHandle(Pointer);
             }
         }
 

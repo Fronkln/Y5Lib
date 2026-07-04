@@ -13,7 +13,7 @@ public:
 	int32_t applyPlayerPos; //0x0038
 	char pad_003C[4]; //0x003C
 	unsigned int missionID; //0x0040
-	int32_t N000034D0; //0x0044
+	int32_t someMode; //0x0044
 	char pad_0048[52]; //0x0048
 	int32_t prohibitTransition; //0x007C when set to 1 prevented the battle sequence from ending
 	char pad_0080[124]; //0x0080

@@ -11,9 +11,13 @@ class CActionFighterManager : public CActionBase
 	typedef int(__fastcall* _ProcessDisposeQueue)(void* thisPtr);
 	typedef int(__fastcall* _AddToDisposeQueue)(void* thisPtr, void* inf);
 
+	typedef Fighter*(__fastcall* _GetFighterByUID)(void* thisPtr, int fighterUID);
+
 private:
 	static _ProcessDisposeQueue ASM_ProcessDisposeQueue;
 	static _AddToDisposeQueue ASM_AddToDisposeQueue;
+	
+	static _GetFighterByUID ASM_GetFighterByUID;
 
 public:
 	char pad_01C8[8]; //0x01C8
@@ -42,6 +46,11 @@ public:
 	void ProcessDisposeQueue() 
 	{
 		ASM_ProcessDisposeQueue(this);
+	}
+
+	Fighter* GetFighterByUID(int uid)
+	{
+		return ASM_GetFighterByUID(this, uid);
 	}
 
 }; //Size: 0x0638

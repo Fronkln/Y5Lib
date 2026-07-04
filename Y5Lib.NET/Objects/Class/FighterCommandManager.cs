@@ -10,7 +10,8 @@ namespace Y5Lib
 
         public static CFCMove GetCommandInfo(FighterCommandID command)
         {
-            return Marshal.PtrToStructure<CFCMove>(Y5Lib_FighterCommandManager_GetCommandInfo(command));
+            IntPtr commandDataPtr = Y5Lib_FighterCommandManager_GetCommandInfo(command);
+            return Marshal.PtrToStructure<CFCMove>(commandDataPtr);
         }
 
     }

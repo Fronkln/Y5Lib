@@ -163,17 +163,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\OE Library .NET\OE Library\RE\Struct\vec.h" />
+    <ClInclude Include="buffer.h" />
     <ClInclude Include="CActionFighterManager.h" />
     <ClInclude Include="CActionManager.h" />
+    <ClInclude Include="Exports\CActionAuthManagerExports.h" />
     <ClInclude Include="Exports\CActionCtrlTypeManagerExports.h" />
     <ClInclude Include="Exports\CActionEnemyDisposeManagerExports.h" />
     <ClInclude Include="Exports\CActionFighterSyncManagerExports.h" />
+    <ClInclude Include="Exports\CActionSoundManagerExports.h" />
     <ClInclude Include="Exports\CScenarioManagerExports.h" />
     <ClInclude Include="Exports\FighterCommandManagerExports.h" />
     <ClInclude Include="Exports\FighterController_Exports.h" />
+    <ClInclude Include="Objects\Class\CActionAuthManager.h" />
     <ClInclude Include="Objects\Class\CActionCtrlTypeManager.h" />
     <ClInclude Include="Objects\Class\CActionEnemyDisposeManager.h" />
     <ClInclude Include="Objects\Class\CActionFighterSyncManager.h" />
+    <ClInclude Include="Objects\Class\CActionSoundManager.h" />
     <ClInclude Include="Objects\Class\CScenarioManager.h" />
     <ClInclude Include="Objects\Class\CSequenceManager.h" />
     <ClInclude Include="defines.h" />
@@ -253,16 +258,19 @@
     <ClInclude Include="Objects\Struct\matrix.h" />
     <ClInclude Include="Objects\Struct\MissionData.h" />
     <ClInclude Include="Objects\Struct\pxd_hash.h" />
+    <ClInclude Include="Objects\Struct\SyncRegisterData.h" />
     <ClInclude Include="Objects\Struct\vec.h" />
     <ClInclude Include="OE.h" />
     <ClInclude Include="PatternScan.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="buffer.cpp" />
     <ClCompile Include="CActionManager.cpp" />
     <ClCompile Include="Objects\Class\CActionCtrlTypeManager.cpp" />
     <ClCompile Include="Objects\Class\CActionEnemyDisposeManager.cpp" />
     <ClCompile Include="Objects\Class\CActionFighterSyncManager.cpp" />
+    <ClCompile Include="Objects\Class\CActionSoundManager.cpp" />
     <ClCompile Include="Objects\Class\CScenarioManager.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="CActionFighterManager.cpp" />

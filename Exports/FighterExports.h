@@ -21,6 +21,54 @@ extern "C"
 		fighter->CombatInfoPtr->health = health;
 	}
 
+	Y5LIB_EXPORT inline unsigned short OE_LIB_FIGHTER_GETTER_HEAT(Fighter* fighter)
+	{
+		if (fighter == nullptr)
+			return 0;
+		else
+			return fighter->CombatInfoPtr->heat;
+	}
+
+	Y5LIB_EXPORT inline void OE_LIB_FIGHTER_SETTER_HEAT(Fighter* fighter, unsigned short heat)
+	{
+		if (fighter == nullptr)
+			return;
+
+		fighter->CombatInfoPtr->heat = heat;
+	}
+
+	Y5LIB_EXPORT inline unsigned short OE_LIB_FIGHTER_GETTER_MAXHEALTH(Fighter* fighter)
+	{
+		if (fighter == nullptr)
+			return 0;
+		else
+			return fighter->CombatInfoPtr->maxHealth;
+	}
+
+	Y5LIB_EXPORT inline void OE_LIB_FIGHTER_SETTER_MAXHEALTH(Fighter* fighter, unsigned short health)
+	{
+		if (fighter == nullptr)
+			return;
+
+		fighter->CombatInfoPtr->maxHealth = health;
+	}
+
+	Y5LIB_EXPORT inline unsigned short OE_LIB_FIGHTER_GETTER_MAXHEAT(Fighter* fighter)
+	{
+		if (fighter == nullptr)
+			return 0;
+		else
+			return fighter->CombatInfoPtr->maxHeat;
+	}
+
+	Y5LIB_EXPORT inline void OE_LIB_FIGHTER_SETTER_MAXHEAT(Fighter* fighter, unsigned short heat)
+	{
+		if (fighter == nullptr)
+			return;
+
+		fighter->CombatInfoPtr->maxHeat = heat;
+	}
+
 	Y5LIB_EXPORT inline DisposeInfo* OE_LIB_FIGHTER_GETTER_DISPOSE_INFO(Fighter* fighter)
 	{
 		if (fighter == nullptr)
@@ -150,6 +198,14 @@ extern "C"
 		return fighter->fighterFlags;
 	}
 
+	Y5LIB_EXPORT inline int OE_LIB_FIGHTER_GETTER_SYNC_SERIAL(Fighter* fighter)
+	{
+		if (fighter == nullptr)
+			return 0;
+		else
+			return fighter->syncSerial;
+	}
+
 	Y5LIB_EXPORT inline void OE_LIB_FIGHTER_SET_THINK_MODE(Fighter* fighter, int mode)
 	{
 		if (fighter == nullptr)
@@ -181,4 +237,21 @@ extern "C"
 
 		fighter->isUnkillable = unKillable;
 	}
+
+	Y5LIB_EXPORT inline int OE_LIB_FIGHTER_GETTER_FUID(Fighter* fighter)
+	{
+		if (fighter == nullptr)
+			return -1;
+		else
+			return fighter->disposeInfo.fighterUID;
+	}
+
+	Y5LIB_EXPORT inline void OE_LIB_FIGHTER_SETTER_FUID(Fighter* fighter, int val)
+	{
+		if (fighter == nullptr)
+			return;
+
+		fighter->disposeInfo.fighterUID = val;
+	}
+
 }

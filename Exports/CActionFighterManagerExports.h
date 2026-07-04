@@ -19,6 +19,19 @@ extern "C"
 		return fman->GetFighter(index);
 	}
 
+	Y5LIB_EXPORT inline Fighter* OE_LIB_ACTIONFIGHTERMANAGER_GET_FIGHTER_BY_UID(int uid)
+	{
+		if (uid == -1)
+			return nullptr;
+
+		CActionFighterManager* fman = *OE::ActionFighterManager;
+
+		if (fman == nullptr)
+			return nullptr;
+
+		return fman->GetFighterByUID(uid);
+	}
+
 	Y5LIB_EXPORT inline bool OE_LIB_ACTIONFIGHTERMANAGER_IS_FIGHTER_PRESENT(int index)
 	{
 		if (index == -1)

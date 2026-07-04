@@ -13,5 +13,10 @@ namespace Y5Lib
             Set = set;
             Command = command;
         }
+
+        public override string ToString()
+        {
+            return $"{Set}-{Command}";
+        }
     }
 }

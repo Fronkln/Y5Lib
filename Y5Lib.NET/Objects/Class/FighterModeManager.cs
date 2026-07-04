@@ -21,6 +21,9 @@ namespace Y5Lib
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTERMODEMANAGER_GETTER_OWNER", CallingConvention = CallingConvention.Cdecl)]
         internal static extern IntPtr Y5Lib_FighterModeManager_Getter_Owner(IntPtr fmManager);
 
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTERMODEMANAGER_GET_CURRENT_COMMAND", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern FighterCommandID Y5Lib_FighterModeManager_GetCurrentCommand(IntPtr fmManager);
+
         public Fighter Owner
         {
             get
@@ -34,6 +37,14 @@ namespace Y5Lib
             get
             {
                 return new FighterMode() { Pointer = Y5Lib_FighterModeManager_Getter_CurrentMode(Pointer) };
+            }
+        }
+
+        public FighterCommandID CurrentCommand
+        {
+            get
+            {
+                return Y5Lib_FighterModeManager_GetCurrentCommand(Pointer);
             }
         }
 

@@ -19,11 +19,16 @@ public:
 	int32_t status; //0x0010
 	int32_t flags; //0x0014
 	int32_t N00002774; //0x0018
-	char pad_001C[12]; //0x001C
+	char pad_001C[4]; //0x001C
+	void* N00002775; //0x0020
 	void* N00002776; //0x0028
-	char pad_0030[24]; //0x0030
+	void* N000023B6; //0x0030
+	char pad_0038[16]; //0x0038
 	void* N000023B9; //0x0048
-	char pad_0050[288]; //0x0050
+	void* N000023BA; //0x0050
+	char pad_0058[4]; //0x0058
+	int32_t N00005CD9; //0x005C
+	char pad_0060[272]; //0x0060
 	void* N000023DE; //0x0170
 	char pad_0178[8]; //0x0178
 	char name[256]; //0x0180
@@ -41,7 +46,9 @@ public:
 	float endFrame; //0x03CC
 	float N000023EB; //0x03D0
 	float timeStep; //0x03D4
-	char pad_03D8[88]; //0x03D8
+	char pad_03D8[72]; //0x03D8
+	int64_t streamHandle; //0x0420
+	char pad_0428[8]; //0x0428
 	Matrix4x4 transform; //0x0430
 	char pad_0470[192]; //0x0470
 	int32_t phase; //0x0530

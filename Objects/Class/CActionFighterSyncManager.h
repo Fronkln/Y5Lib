@@ -1,6 +1,6 @@
 #pragma once
 #include <cstdint>
-#include "..\Struct\FighterCommandID.h"
+#include "Objects/Struct/SyncRegisterData.h"
 
 class CActionFighterSyncManager
 {
@@ -13,10 +13,10 @@ public:
 	char pad_0008[8]; //0x0008
 	int32_t currentSyncSerial; //0x0010
 	char pad_0014[12]; //0x0014
-	class SyncRegisterData* (*syncsToMakeDataPtr)[8]; //0x0020
+	class SyncRegisterData** syncsToMakeDataPtr; //0x0020
 	int64_t syncsToMake; //0x0028
 	class SyncRegisterData* syncsToMakeData[8]; //0x0030
-	void* activeSyncDatas; //0x0070
+	SyncRegisterData** activeSyncDatas; //0x0070
 	int64_t activeSyncs; //0x0078
 	char pad_0080[64]; //0x0080
 
