@@ -26,12 +26,12 @@ namespace Y5Lib
 
         public bool IsValid()
         {
-            return UID != 0 && ActionEntityManager.GetEntityByUID(UID) != IntPtr.Zero;
+            return UID != 0 && ActionEntityManager.GetEntityByUID(UID).Pointer != IntPtr.Zero;
         }
 
         public T To<T>() where T: Entity, new()
         {
-            IntPtr entPtr = ActionEntityManager.GetEntityByUID(UID);
+            IntPtr entPtr = ActionEntityManager.GetEntityByUID(UID).Pointer;
 
             T ent = new T();
             ent.Pointer = entPtr;

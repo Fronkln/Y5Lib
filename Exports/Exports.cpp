@@ -34,6 +34,10 @@
 #include "CActionDanceBattleManagerExports.h"
 #include "CActInputDeviceManagerExports.h"
 #include "CInputDeviceListenerExports.h"
+#include "CFontExports.h"
+#include "CHumanInfoExports.h"
+#include "ScreenExports.h"
+#include "criAdx2PlayerExports.h"
 #include "MemoryMgr.h"
 #include "buffer.h"
 
@@ -73,5 +77,15 @@ extern "C"
     Y5LIB_EXPORT inline void* LIB_UNSAFE_ALLOC_BUFFER(void* origin)
     {
         return AllocateBuffer(origin);
+    };
+
+
+    typedef void(__fastcall* _tFunc)(bool* in_hit, __m128* start, __m128* end, __int64 mask, BYTE* idk, int a6);
+    Y5LIB_EXPORT inline void LIB_TEST(bool* in_hit, __m128* start, __m128* end, __int64 mask)
+    {
+        _tFunc testo = (_tFunc)0x140F42E60;
+
+        BYTE idfk = 0;
+        testo(in_hit, start, end, mask, 0, 0);
     };
 }

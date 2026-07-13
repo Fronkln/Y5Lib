@@ -3,6 +3,7 @@
     public enum MissionID : uint
     {
         Menu = 104,
+        DanceBattle = 247,
         Adventure = 300,
         EncounterBattle = 400,
         ScriptedBattle = 401,

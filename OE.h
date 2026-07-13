@@ -10,6 +10,7 @@ class CActionManager;
 class CActionEntityManager;
 class CSequenceManager;
 class CScenarioManager;
+class CFont;
 
 typedef void(__cdecl* _OE_RegisterJob)();
 typedef void(__cdecl* _OE_CJob_Phase_Execute)(int job);
@@ -90,6 +91,7 @@ public:
     static CActionEntityManager** ActionEntityManager;
     static CSequenceManager** SequenceManager;
     static CScenarioManager** ScenarioManager;
+    static CFont** Font;
 
     static void InitHook()
     {

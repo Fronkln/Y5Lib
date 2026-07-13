@@ -34,7 +34,7 @@ extern "C"
 	Y5LIB_EXPORT inline int OE_LIB_SYNCREGISTERDATA_GETTER_PAIR_COUNT(SyncRegisterData* registerDat)
 	{
 		if (registerDat == nullptr)
-			return 0;
+			return -1;
 
 		return registerDat->pairCount;
 	}
@@ -45,6 +45,22 @@ extern "C"
 			return -1;
 
 		return registerDat->syncPairs[index].fighterIndex;
+	}
+
+	Y5LIB_EXPORT inline SyncRegisterData* OE_LIB_ACTIONFIGHTERSYNCMANAGER_GET_SYNCTOMAKE_BY_SERIAL(int serial)
+	{
+		CActionFighterManager* fman = *OE::ActionFighterManager;
+
+		if (fman == nullptr)
+			return 0;
+
+		auto syncMan = fman->fighterSyncManager;
+
+		for (int i = 0; i < syncMan.syncsToMake; i++)
+			if (syncMan.syncsToMakeDataPtr[i]->serial == serial)
+				return syncMan.syncsToMakeDataPtr[i];
+
+		return nullptr;
 	}
 
 	Y5LIB_EXPORT inline SyncRegisterData* OE_LIB_ACTIONFIGHTERSYNCMANAGER_GET_SYNCTOMAKE(int idx)

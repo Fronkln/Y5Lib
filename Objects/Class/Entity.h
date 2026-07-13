@@ -10,24 +10,26 @@ class Entity : public EntityBase
 public:
 	char pad_0028[40]; //0x0028
 	uint32_t UID; //0x0050
-	char pad_0054[28]; //0x0054
+	char pad_0054[20]; //0x0054
+	class CCCEntityEntry* cccEntry; //0x0068
 	vec4f Position; //0x0070
 	char pad_0080[4]; //0x0080
 	int32_t RotationY; //0x0084
 	char pad_0088[8]; //0x0088
-	void* InputController; //0x0090
+	class CInputDeviceListener* InputController; //0x0090
 	void* N00003BE3; //0x0098
 	char pad_00A0[144]; //0x00A0
 	char* ClassName; //0x0130
 	char pad_0138[8]; //0x0138
 
+	virtual void VFunc0() {};
 	virtual void VFunc1() {};
 	virtual void VFunc2() {};
-	virtual void VFunc3() {};
 	virtual void GetPositionCore(vec4f& in_pos) {};
 	virtual vec4f& GetPosition(vec4f& in_pos) {};
 	virtual void SetPosition(vec4f& position) {};
 	virtual void WarpToPosition(vec4f& position) {};
+	virtual void VFunc7() {};
 	virtual void VFunc8() {};
 	virtual void VFunc9() {};
 	virtual void VFunc10() {};
@@ -52,13 +54,13 @@ public:
 	virtual void VFunc29() {};
 	virtual void VFunc30() {};
 	virtual void VFunc31() {};
-	virtual void VFunc32() {};
+	virtual vec4f& GetCrownPosition(vec4f& in_pos) {};
 	virtual void VFunc33() {};
 	virtual void VFunc34() {};
 	virtual void VFunc35() {};
 	virtual void VFunc36() {};
 	virtual void VFunc37() {};
-	virtual void VFunc38() {};
+	virtual bool CanShowTextBubble() {};
 	virtual void VFunc39() {};
 	virtual void VFunc40() {};
 	virtual void VFunc41() {};

@@ -24,6 +24,13 @@ namespace Y5Lib
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTERMODEMANAGER_GET_CURRENT_COMMAND", CallingConvention = CallingConvention.Cdecl)]
         internal static extern FighterCommandID Y5Lib_FighterModeManager_GetCurrentCommand(IntPtr fmManager);
 
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTERMODEMANAGER_GET_CURRENT_COMMANDSET", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Y5Lib_FighterModeManager_GetCurrentCommandSet(IntPtr fmManager);
+
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTERMODEMANAGER_GET_COMMANDSET", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Y5Lib_FighterModeManager_GetCommandSet(IntPtr fmManager, int index);
+
+
         public Fighter Owner
         {
             get
@@ -48,6 +55,8 @@ namespace Y5Lib
             }
         }
 
+        public int CurrentCommandset => Y5Lib_FighterModeManager_GetCurrentCommandSet(Pointer);
+
 
         public void ToAttack(FighterCommandID attack)
         {
@@ -57,6 +66,12 @@ namespace Y5Lib
         public void ToDeadByDamage(DamageInfo damage)
         {
             Y5Lib_FighterModeManager_ToDeadByDamage(Pointer, ref damage);
+        }
+
+
+        public int GetCommandset(int index)
+        {
+            return Y5Lib_FighterModeManager_GetCommandSet(Pointer, index);
         }
 
         public void SetCommandset(string commandset)

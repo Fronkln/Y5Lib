@@ -12,3 +12,4 @@ CActionManager** OE::ActionManager;
 CActionEntityManager** OE::ActionEntityManager;
 CSequenceManager** OE::SequenceManager;
 CScenarioManager** OE::ScenarioManager;
+CFont** OE::Font;

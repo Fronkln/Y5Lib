@@ -1,5 +1,6 @@
 #pragma once
 #include "Entity.h"
+#include "CHumanDraw.h"
 
 #pragma pack(push, 1)
 
@@ -10,12 +11,11 @@ class Human : public Entity
 public:
 	Motion::EntityMotion* Motion; //0x0140
 	char pad_0148[24]; //0x0148
-	class HumanModel* Model; //0x0160
+	class CHumanDraw* Model; //0x0160
 	char pad_0168[1208]; //0x0168
 	void* N00004915; //0x0620
 	char pad_0628[128]; //0x0628
 
-	virtual void VFunc51() {};
 	virtual void VFunc52() {};
 	virtual void VFunc53() {};
 	virtual void VFunc54() {};
@@ -36,13 +36,13 @@ public:
 	virtual void VFunc69() {};
 	virtual void VFunc70() {};
 	virtual void VFunc71() {};
-	virtual void VFunc72() {};
+	virtual bool IsPlayer() { return false; };
 	virtual void VFunc73() {};
 	virtual void VFunc74() {};
 	virtual void VFunc75() {};
 	virtual void VFunc76() {};
 	virtual void VFunc77() {};
-	virtual void VFunc78() {};
+	virtual int GetFighterIndex() { return -1; };
 	virtual void VFunc79() {};
 	virtual void VFunc80() {};
 	virtual void VFunc81() {};
@@ -58,7 +58,6 @@ public:
 	virtual void VFunc91() {};
 	virtual void VFunc92() {};
 	virtual void VFunc93() {};
-	virtual void VFunc94() {};
 }; //Size: 0x06A4
 
 #pragma pack(pop)

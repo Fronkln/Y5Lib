@@ -78,4 +78,14 @@ extern "C"
 
         return actMan->gamePaused;
     }
+
+    Y5LIB_EXPORT inline void OE_LIB_ACTIONMANAGER_SET_ACTION_MODE_BITS(int bits)
+    {
+        CActionManager* actMan = *OE::ActionManager;
+
+        if (actMan == nullptr)
+            return;
+
+       actMan->actionModeBitwise = bits;
+    }
 }

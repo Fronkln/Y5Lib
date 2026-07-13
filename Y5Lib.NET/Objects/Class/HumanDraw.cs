@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Y5Lib
 {
-    public class HumanModel : UnmanagedObject
+    public class HumanDraw : UnmanagedObject
     {
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_HUMANMODEL_GETTER_MODELNAME", CallingConvention = CallingConvention.Cdecl)]
         internal static extern IntPtr Y5Lib_HumanModel_Getter_Name(IntPtr model);

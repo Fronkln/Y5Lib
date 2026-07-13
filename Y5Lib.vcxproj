@@ -171,14 +171,22 @@
     <ClInclude Include="Exports\CActionEnemyDisposeManagerExports.h" />
     <ClInclude Include="Exports\CActionFighterSyncManagerExports.h" />
     <ClInclude Include="Exports\CActionSoundManagerExports.h" />
+    <ClInclude Include="Exports\CFontExports.h" />
+    <ClInclude Include="Exports\CHumanInfoExports.h" />
+    <ClInclude Include="Exports\criAdx2PlayerExports.h" />
     <ClInclude Include="Exports\CScenarioManagerExports.h" />
     <ClInclude Include="Exports\FighterCommandManagerExports.h" />
     <ClInclude Include="Exports\FighterController_Exports.h" />
+    <ClInclude Include="Exports\ScreenExports.h" />
     <ClInclude Include="Objects\Class\CActionAuthManager.h" />
     <ClInclude Include="Objects\Class\CActionCtrlTypeManager.h" />
     <ClInclude Include="Objects\Class\CActionEnemyDisposeManager.h" />
     <ClInclude Include="Objects\Class\CActionFighterSyncManager.h" />
     <ClInclude Include="Objects\Class\CActionSoundManager.h" />
+    <ClInclude Include="Objects\Class\CFont.h" />
+    <ClInclude Include="Objects\Class\CHumanInfo.h" />
+    <ClInclude Include="Objects\Class\CMsgPlay.h" />
+    <ClInclude Include="Objects\Class\criAdx2Player.h" />
     <ClInclude Include="Objects\Class\CScenarioManager.h" />
     <ClInclude Include="Objects\Class\CSequenceManager.h" />
     <ClInclude Include="defines.h" />
@@ -244,10 +252,11 @@
     <ClInclude Include="Objects\Class\FighterMode.h" />
     <ClInclude Include="Objects\Class\FighterMotion.h" />
     <ClInclude Include="Objects\Class\Human.h" />
-    <ClInclude Include="Objects\Class\HumanModel.h" />
+    <ClInclude Include="Objects\Class\CHumanDraw.h" />
     <ClInclude Include="Objects\Class\HumanMotion.h" />
     <ClInclude Include="Objects\Class\MotionThingy.h" />
     <ClInclude Include="Objects\Class\Player.h" />
+    <ClInclude Include="Objects\Class\Screen.h" />
     <ClInclude Include="Objects\Class\UnknownMotionComponent.h" />
     <ClInclude Include="Objects\Struct\CFCMove.h" />
     <ClInclude Include="Objects\Struct\DamageInfo.h" />
@@ -267,10 +276,13 @@
   <ItemGroup>
     <ClCompile Include="buffer.cpp" />
     <ClCompile Include="CActionManager.cpp" />
+    <ClCompile Include="Objects\Class\CActionCCCManager.cpp" />
     <ClCompile Include="Objects\Class\CActionCtrlTypeManager.cpp" />
     <ClCompile Include="Objects\Class\CActionEnemyDisposeManager.cpp" />
     <ClCompile Include="Objects\Class\CActionFighterSyncManager.cpp" />
     <ClCompile Include="Objects\Class\CActionSoundManager.cpp" />
+    <ClCompile Include="Objects\Class\CFont.cpp" />
+    <ClCompile Include="Objects\Class\CHumanInfo.cpp" />
     <ClCompile Include="Objects\Class\CScenarioManager.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="CActionFighterManager.cpp" />
@@ -286,6 +298,7 @@
     <ClCompile Include="Objects\Class\FighterMode.cpp" />
     <ClCompile Include="Objects\Class\HumanMotion.cpp" />
     <ClCompile Include="Objects\Class\Player.cpp" />
+    <ClCompile Include="Objects\Class\Screen.cpp" />
     <ClCompile Include="OE.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

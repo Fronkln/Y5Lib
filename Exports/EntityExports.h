@@ -14,6 +14,16 @@ extern "C"
 		return entity->GetPosition(pos);
 	}
 
+	Y5LIB_EXPORT inline vec4f OE_LIB_ENTITY_GET_CROWN_POSITION(Entity* entity)
+	{
+		if (entity == nullptr)
+			return vec4f();
+
+		vec4f pos;
+		return entity->GetCrownPosition(pos);
+	}
+
+
 	Y5LIB_EXPORT inline void OE_LIB_ENTITY_SET_POSITION(Entity* entity, vec4f value)
 	{
 		if (entity == nullptr)
@@ -52,5 +62,13 @@ extern "C"
 			return 0;
 
 		return entity->InputController;
+	}
+
+	Y5LIB_EXPORT inline void* OE_LIB_ENTITY_GETTER_MSG_DATA(Entity* entity)
+	{
+		if (entity == nullptr)
+			return 0;
+
+		return entity->cccEntry;
 	}
 }

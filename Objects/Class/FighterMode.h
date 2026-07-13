@@ -41,7 +41,10 @@ public:
 	class Fighter* fighter; //0x0028
 	char pad_0030[392]; //0x0030
 	class FMDamageModule* DamageModule; //0x01B8
-	char pad_01C0[176]; //0x01C0
+	char pad_01C0[96]; //0x01C0
+	int32_t activeCommandset; //0x0220
+	int32_t commandSets[3]; //0x0224
+	char pad_0230[64]; //0x0230
 
 	void SetCommandset(int unk1, const char* commandsetName)
 	{

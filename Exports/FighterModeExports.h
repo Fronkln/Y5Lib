@@ -49,6 +49,25 @@ extern "C"
 		}
 	}
 
+	Y5LIB_EXPORT inline int OE_LIB_FIGHTERMODEMANAGER_GET_COMMANDSET(FighterModeManager* fighterModeMan, int idx)
+	{
+		if (fighterModeMan == nullptr)
+			return -1;
+
+		if (idx < 0 || idx > 2)
+			return -1;
+
+		return fighterModeMan->commandSets[idx];
+	}
+
+	Y5LIB_EXPORT inline int OE_LIB_FIGHTERMODEMANAGER_GET_CURRENT_COMMANDSET(FighterModeManager* fighterModeMan)
+	{
+		if (fighterModeMan == nullptr)
+			return -1;
+
+		return fighterModeMan->commandSets[fighterModeMan->activeCommandset];
+	}
+
 	Y5LIB_EXPORT inline Fighter* OE_LIB_FIGHTERMODEMANAGER_GETTER_OWNER(FighterModeManager* fighterModeMan)
 	{
 		if (fighterModeMan == nullptr)

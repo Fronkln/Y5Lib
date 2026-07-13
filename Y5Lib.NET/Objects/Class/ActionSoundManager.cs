@@ -11,5 +11,10 @@ namespace Y5Lib
         {
             return Y5Lib_ActionSoundManager_PlaySound(cuesheet, soundID, unknown);
         }
+
+        public static int PlaySound(SoundCue cue, int unknown = 0)
+        {
+            return Y5Lib_ActionSoundManager_PlaySound(cue.Cuesheet, cue.Sound, unknown);
+        }
     }
 }

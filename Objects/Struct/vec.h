@@ -241,22 +241,6 @@ public:
 
         return vec;
     }
-    /*
-    //lerping done unity style
-    static vec4f lerp(vec4f a, vec4f b, float t)
-    {
-        vec4f result;
-
-
-        result.x = lerp(a.x, a.x, t);
-        result.y = lerp(a.y, a.y, t);
-        result.z = lerp(a.z, a.z, t);
-        result.z = lerp(a.w, a.w, t);
-
-
-        return result;
-    }
-    */
 
     vec3f operator+(vec3f vecB)
     {
@@ -329,3 +313,14 @@ public:
 };
 
 #endif // ! VECTOR4F
+
+#ifndef VECTOR2F
+#define VECTOR2F
+struct vec2f
+{
+public:
+    float x;
+    float y;
+};
+
+#endif // ! VECTOR2F

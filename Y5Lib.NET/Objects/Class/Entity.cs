@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using System.Runtime.Remoting.Messaging;
 
 namespace Y5Lib
 {
@@ -56,6 +55,9 @@ namespace Y5Lib
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ENTITY_GET_POSITION", CallingConvention = CallingConvention.Cdecl)]
         internal static extern Vector4 Y5Lib_Entity_GetPosition(IntPtr ent);
 
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ENTITY_GET_CROWN_POSITION", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern Vector4 Y5Lib_Entity_GetCrownPosition(IntPtr ent);
+
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ENTITY_SET_POSITION", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Y5Lib_Entity_SetPosition(IntPtr ent, Vector4 pos);
 
@@ -75,6 +77,13 @@ namespace Y5Lib
         public Vector3 Position { get { return Y5Lib_Entity_GetPosition(Pointer); } set { Y5Lib_Entity_SetPosition(Pointer, value); } }
         public ushort RotationY { get { return Y5Lib_Entity_Getter_RotationY(Pointer); } }
 
+        public EntityMsgComponent MSG { get; private set; }
+
+        public Entity() : base()
+        {
+            MSG = new EntityMsgComponent() { Owner = this };
+        }
+
         public InputDeviceListener InputController
         {
             get
@@ -86,6 +95,11 @@ namespace Y5Lib
         public void WarpToPosition(Vector3 pos)
         {
             Y5Lib_Entity_WarpToPosition(Pointer, pos);
+        }
+
+        public Vector3 GetCrownOffset()
+        {
+            return Y5Lib_Entity_GetCrownPosition(Pointer);
         }
     }
 }

@@ -37,6 +37,14 @@ namespace Y5Lib
             foreach (char c in str)
                 checksum += (byte)c;
         }
+
+        public ChecksumString(string str)
+        {
+            this.checksum = 0;
+            this.str = null;
+
+            Set(str);
+        }
     }
 
 }

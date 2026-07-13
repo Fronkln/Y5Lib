@@ -15,6 +15,7 @@ extern "C"
 		OE::ActionEntityManager = (CActionEntityManager**)(resolve_relative_addr((PatternScan(GetModuleHandle(NULL), "48 8B 0D ? ? ? ? E8 ? ? ? ? 48 8B 07 48 8B CF FF 50 08 E9 ? ? ? ?")), 7));
 		OE::SequenceManager = (CSequenceManager**)(resolve_relative_addr((PatternScan(GetModuleHandle(NULL), "48 8B 05 ? ? ? ? 44 8B 88 88 00 00 00")), 7));
 		OE::ScenarioManager = (CScenarioManager**)(resolve_relative_addr((PatternScan(GetModuleHandle(NULL), "48 8B 0D ? ? ? ? 45 33 C0 E8 ? ? ? ? F6 85")), 7));
+		OE::Font = (CFont**)(resolve_relative_addr((PatternScan(GetModuleHandle(NULL), "48 89 2D ? ? ? ? E8 ? ? ? ? E8 ? ? ? ? E8 ? ? ? ? E8 ? ? ? ? E8")), 7));
 
 		OE::InitHook();
 	}
