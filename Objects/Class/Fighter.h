@@ -33,11 +33,6 @@ private:
 	static FIGHTER_ToDead ASM_ToDead;
 
 public:
-	char pad_06A8[72]; //0x06A8
-	class DelegateMaybe delegatesMaybe[17]; //0x06F0
-	char pad_0888[1528]; //0x0888
-	class MotionRelatedClass2* MotionRelatedPointer; //0x0E80
-	char pad_0E88[2168]; //0x0E88
 	class DisposeInfo disposeInfo; //0x1700
 	uint32_t fighterIndex; //0x17B0
 	int32_t ctrlType; //0x17B4

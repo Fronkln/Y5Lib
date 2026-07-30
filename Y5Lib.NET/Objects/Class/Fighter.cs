@@ -178,15 +178,6 @@ namespace Y5Lib
             }
         }
 
-        public string Model
-        {
-            get
-            {
-                IntPtr ptr = Y5Lib_Fighter_Getter_ModelName(Pointer);
-                return ptr != IntPtr.Zero ? Marshal.PtrToStringAnsi(ptr) : "invalid";
-            }
-        }
-
         public FighterModeManager ModeManager
         {
             get

@@ -43,4 +43,12 @@ extern "C"
 		else
 			return human->Model->voicerID;
 	}
+
+	Y5LIB_EXPORT inline int OE_LIB_HUMAN_GETTER_AI_CHIP(Human* human)
+	{
+		if (human == nullptr)
+			return 0;
+		else
+			return human->aiChip;
+	}
 }

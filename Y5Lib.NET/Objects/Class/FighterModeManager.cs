@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 
@@ -11,6 +12,12 @@ namespace Y5Lib
 
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTERMODEMANAGER_TOATTACK", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Y5Lib_FighterModeManager_ToAttack(IntPtr fmManager, FighterCommandID attack);
+
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTERMODEMANAGER_TOPROVOKE", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void Y5Lib_FighterModeManager_ToProvoke(IntPtr fmManager, FighterCommandID provoke);
+
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTERMODEMANAGER_TOACTION", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void Y5Lib_FighterModeManager_ToAction(IntPtr fmManager, FighterCommandID action);
 
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTERMODEMANAGER_GETTER_CURRENT_MODE", CallingConvention = CallingConvention.Cdecl)]
         internal static extern IntPtr Y5Lib_FighterModeManager_Getter_CurrentMode(IntPtr fmManager);
@@ -58,25 +65,14 @@ namespace Y5Lib
         public int CurrentCommandset => Y5Lib_FighterModeManager_GetCurrentCommandSet(Pointer);
 
 
-        public void ToAttack(FighterCommandID attack)
-        {
-            Y5Lib_FighterModeManager_ToAttack(Pointer, attack);
-        }
-
-        public void ToDeadByDamage(DamageInfo damage)
-        {
-            Y5Lib_FighterModeManager_ToDeadByDamage(Pointer, ref damage);
-        }
+        public void ToAttack(FighterCommandID attack) => Y5Lib_FighterModeManager_ToAttack(Pointer, attack);
+        public void ToAction(FighterCommandID action) => Y5Lib_FighterModeManager_ToAction(Pointer, action);
 
 
-        public int GetCommandset(int index)
-        {
-            return Y5Lib_FighterModeManager_GetCommandSet(Pointer, index);
-        }
+        public void ToDeadByDamage(DamageInfo damage) => Y5Lib_FighterModeManager_ToDeadByDamage(Pointer, ref damage);
 
-        public void SetCommandset(string commandset)
-        {
-            Y5Lib_FighterModeManager_Set_Commandset(Pointer, commandset);
-        }
+
+        public int GetCommandset(int index) => Y5Lib_FighterModeManager_GetCommandSet(Pointer, index);
+        public void SetCommandset(string commandset) => Y5Lib_FighterModeManager_Set_Commandset(Pointer, commandset);
     }
 }

@@ -44,7 +44,7 @@ public:
 	char pad_0388[8]; //0x0388
 	void* cccc; //0x0390
 	char pad_0398[32]; //0x0398
-	void* actionWandererManager; //0x03B8
+	class CActionWandererManager* actionWandererManager; //0x03B8
 	char pad_03C0[184]; //0x03C0
 	class CActionMenu* menu; //0x0478
 	char pad_0480[368]; //0x0480

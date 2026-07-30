@@ -22,6 +22,9 @@ namespace Y5Lib
             [DllImport("Y5Lib.dll", EntryPoint = "LIB_READ_RELATIVE_ADDRESS", CallingConvention = CallingConvention.Cdecl)]
             public static extern IntPtr ResolveRelativeAddress(IntPtr addr, int instructionLen);
 
+            [DllImport("Y5Lib.dll", EntryPoint = "LIB_WRITE_RELATIVE_ADDRESS", CallingConvention = CallingConvention.Cdecl)]
+            public static extern void WriteRelativeAddress(IntPtr addr, IntPtr target, int instructionLen);
+
             [DllImport("Y5Lib.dll", EntryPoint = "LIB_PATTERN_SEARCH", CallingConvention = CallingConvention.Cdecl)]
             public static extern IntPtr PatternSearch(string pattern);
 

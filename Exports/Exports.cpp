@@ -23,6 +23,7 @@
 #include "CActionReactorManagerExports.h"
 #include "CActionStageManagerExports.h"
 #include "CActionSoundManagerExports.h";
+#include "CActionWandererManagerExports.h"
 #include "CActionCCCManagerExports.h"
 #include "CActionHActManagerExports.h"
 #include "CActionHActCHPManager_Exports.h"
@@ -61,7 +62,12 @@ extern "C"
 
     Y5LIB_EXPORT inline void* LIB_READ_RELATIVE_ADDRESS(void* addr, int instruction_length)
     {
-        return  resolve_relative_addr(addr, instruction_length);
+        return resolve_relative_addr(addr, instruction_length);
+    };
+
+    Y5LIB_EXPORT inline void LIB_WRITE_RELATIVE_ADDRESS(void* addr, intptr_t target, int instruction_length)
+    {
+        write_relative_addr(addr, target, instruction_length);
     };
 
     Y5LIB_EXPORT inline void* LIB_READ_CALL(void* addr)

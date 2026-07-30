@@ -12,5 +12,10 @@ namespace Y5Lib
         {
             return new Entity() { Pointer = Y5Lib_ActionEntityManager_GetEntityByUID(uid)};
         }
+
+        public static T GetEntityByUID<T>(int uid) where T : Entity, new()
+        {
+            return new T() { Pointer = Y5Lib_ActionEntityManager_GetEntityByUID(uid) };
+        }
     }
 }

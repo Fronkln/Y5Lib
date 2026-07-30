@@ -20,6 +20,19 @@ extern "C"
 		return actMan->cccManager->isActive;
 	}
 
+	Y5LIB_EXPORT inline bool OE_LIB_CACTIONCCCMANAGER_GETTER_IS_DYNAMIC_DIALOGUE_ACTIVE()
+	{
+		CActionManager* actMan = *OE::ActionManager;
+
+		if (actMan == nullptr)
+			return 0;
+
+		if (actMan->cccManager == nullptr)
+			return 0;
+
+		return actMan->cccManager->isDynamicDialogueActive;
+	}
+
 	Y5LIB_EXPORT inline bool OE_LIB_CACTIONCCCMANAGER_PLAY_CCC(LinkedListNode_CCCEntityEntry** node, int entityUID, short groupID, CCCMsgGroupHeader* group, int a6)
 	{
 		CActionManager* actMan = *OE::ActionManager;
@@ -58,6 +71,67 @@ extern "C"
 
 		return actMan->cccManager->talkerUID;
 	}
+
+	Y5LIB_EXPORT inline void* OE_LIB_CACTIONCCCMANAGER_GET_ENTITY_DATA(CCCEntityEntry* entry)
+	{
+		CActionManager* actMan = *OE::ActionManager;
+
+		if (actMan == nullptr)
+			return nullptr;
+
+		return CActionCCCManager::GetEntityData(entry);
+	}
+
+	Y5LIB_EXPORT inline CCCCharacter* OE_LIB_CACTIONCCCMANAGER_GET_CCC_CHARACTER_BY_UID(int UID)
+	{
+		CActionManager* actMan = *OE::ActionManager;
+		if (actMan == nullptr)
+			return nullptr;
+		
+		if (actMan->cccManager == nullptr)
+			return nullptr;
+
+		return actMan->cccManager->GetCCCCharacterByUID(UID);
+	}
+
+	Y5LIB_EXPORT inline CMsgChoice* OE_LIB_CACTIONCCCMANAGER_GETTER_MSGCHOICE()
+	{
+		CActionManager* actMan = *OE::ActionManager;
+
+		if (actMan == nullptr)
+			return nullptr;
+
+		if (actMan->cccManager == nullptr)
+			return nullptr;
+
+		return actMan->cccManager->msgChoice;
+	}
+
+	Y5LIB_EXPORT inline int OE_LIB_CMSGCHOICE_GETTER_CURRENT_CHOICE(CMsgChoice* choice)
+	{
+		if (choice == nullptr)
+			return -1;
+
+		return choice->currentChoice;
+	}
+
+	Y5LIB_EXPORT inline void OE_LIB_CMSGCHOICE_SET_CURRENT_CHOICE(CMsgChoice* choice, int choiceIdx)
+	{
+		if (choice == nullptr)
+			return;
+
+		choice->currentChoice = choiceIdx;
+		choice->uiCurrentChoice = choiceIdx;
+	}
+
+	Y5LIB_EXPORT inline void OE_LIB_CMSGCHOICE_CONFIRM_CHOICE(CMsgChoice* choice)
+	{
+		if (choice == nullptr)
+			return;
+
+		choice->choiceMade = 1;
+	}
+
 
 	Y5LIB_EXPORT inline bool OE_LIB_CMSGPLAY_GETTER_IS_RUNNING(CMsgPlay* play)
 	{
@@ -210,7 +284,6 @@ extern "C"
 
 		play->someFlags = flags;
 	}
-
 
 	Y5LIB_EXPORT inline int OE_LIB_CMSGPLAY_GETTER_STATE(CMsgPlay* play)
 	{

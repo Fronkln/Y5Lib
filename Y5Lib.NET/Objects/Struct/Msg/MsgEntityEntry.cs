@@ -18,9 +18,13 @@ namespace Y5Lib
         public byte someForcedMsgGroupIdx; //0x000D immediately plays group msg without the player interacting when conditions are met and is in range
         public byte someForcedMsgGroupIdx2; //0x000E immediately plays group msg without the player interacting when conditions are met and is in range
         public byte someMsgGroupIdx3; //0x000F
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 24)]
-        public fixed byte pad_0010[32]; //0x0010
-        public int N00006721; //0x0028
-        public int unk;
+        public int a1;
+        public int a2;
+        public int a3;
+        public int a4;
+        public int a5;
+        public int a6;
+        public int a7;
+        public int a8;
     }; //Size: 0x0030
 }

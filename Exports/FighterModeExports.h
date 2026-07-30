@@ -28,6 +28,22 @@ extern "C"
 			fighterModeMan->ToAttack(id);
 	}
 
+	Y5LIB_EXPORT inline void OE_LIB_FIGHTERMODEMANAGER_TOPROVOKE(FighterModeManager* fighterModeMan, FighterCommandID id)
+	{
+		if (fighterModeMan == nullptr)
+			return;
+		else
+			fighterModeMan->ToProvoke(id);
+	}
+
+	Y5LIB_EXPORT inline void OE_LIB_FIGHTERMODEMANAGER_TOACTION(FighterModeManager* fighterModeMan, FighterCommandID id)
+	{
+		if (fighterModeMan == nullptr)
+			return;
+		else
+			fighterModeMan->ToAction(id);
+	}
+
 	Y5LIB_EXPORT inline void OE_LIB_FIGHTERMODEMANAGER_SET_COMMANDSET(FighterModeManager* fighterModeMan, const char* commandset)
 	{
 		if (fighterModeMan == nullptr)

@@ -165,5 +165,10 @@ namespace Y5Lib
 
             return (float)Math.Sqrt(diff_x * diff_x + diff_y * diff_y + diff_z * diff_z);
         }
+
+        public static float Dot(Vector3 lhs, Vector3 rhs)
+        {
+            return lhs.x * rhs.x + lhs.y * rhs.y + lhs.z * rhs.z;
+        }
     }
 }

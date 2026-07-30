@@ -89,4 +89,6 @@ public:
 	virtual void Func28();
 	virtual void Func29();
 	virtual void ToAttack(FighterCommandID command);
+	virtual void ToProvoke(FighterCommandID command);
+	virtual void ToAction(FighterCommandID command);
 }; //Size: 0x0108

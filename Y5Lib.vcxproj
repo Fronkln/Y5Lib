@@ -171,6 +171,7 @@
     <ClInclude Include="Exports\CActionEnemyDisposeManagerExports.h" />
     <ClInclude Include="Exports\CActionFighterSyncManagerExports.h" />
     <ClInclude Include="Exports\CActionSoundManagerExports.h" />
+    <ClInclude Include="Exports\CActionWandererManagerExports.h" />
     <ClInclude Include="Exports\CFontExports.h" />
     <ClInclude Include="Exports\CHumanInfoExports.h" />
     <ClInclude Include="Exports\criAdx2PlayerExports.h" />
@@ -183,8 +184,10 @@
     <ClInclude Include="Objects\Class\CActionEnemyDisposeManager.h" />
     <ClInclude Include="Objects\Class\CActionFighterSyncManager.h" />
     <ClInclude Include="Objects\Class\CActionSoundManager.h" />
+    <ClInclude Include="Objects\Class\CActionWandererManager.h" />
     <ClInclude Include="Objects\Class\CFont.h" />
     <ClInclude Include="Objects\Class\CHumanInfo.h" />
+    <ClInclude Include="Objects\Class\CMsgChoice.h" />
     <ClInclude Include="Objects\Class\CMsgPlay.h" />
     <ClInclude Include="Objects\Class\criAdx2Player.h" />
     <ClInclude Include="Objects\Class\CScenarioManager.h" />
@@ -245,6 +248,7 @@
     <ClInclude Include="Objects\Class\Enemy.h" />
     <ClInclude Include="Objects\Class\Entity.h" />
     <ClInclude Include="Objects\Class\EntityBase.h" />
+    <ClInclude Include="Objects\Class\EntityManagementMethod.h" />
     <ClInclude Include="Objects\Class\EntityMotion.h" />
     <ClInclude Include="Objects\Class\Fighter.h" />
     <ClInclude Include="Objects\Class\FighterCommandManager.h" />
@@ -258,6 +262,7 @@
     <ClInclude Include="Objects\Class\Player.h" />
     <ClInclude Include="Objects\Class\Screen.h" />
     <ClInclude Include="Objects\Class\UnknownMotionComponent.h" />
+    <ClInclude Include="Objects\Class\Wanderer.h" />
     <ClInclude Include="Objects\Struct\CFCMove.h" />
     <ClInclude Include="Objects\Struct\DamageInfo.h" />
     <ClInclude Include="Objects\Struct\DisposeInfo.h" />

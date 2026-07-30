@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection;
 using System.Runtime.InteropServices;
 
 namespace Y5Lib
@@ -15,6 +14,9 @@ namespace Y5Lib
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_HUMAN_GETTER_FIGHTER_INDEX", CallingConvention = CallingConvention.Cdecl)]
         internal static extern int Y5Lib_Human_Getter_Fighter_Index(IntPtr fighter);
 
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_HUMAN_GETTER_AI_CHIP", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Y5Lib_Human_Getter_AI_Chip(IntPtr fighter);
+
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_HUMAN_GETTER_VOICER", CallingConvention = CallingConvention.Cdecl)]
         internal static extern int Y5Lib_Human_Getter_Voicer(IntPtr fighter);
 
@@ -22,9 +24,13 @@ namespace Y5Lib
         [return:MarshalAs(UnmanagedType.U1)]
         internal static extern bool Y5Lib_Human_IsPlayer(IntPtr fighter);
 
+        public delegate IntPtr Y5Lib_Human_GetByUID(int UID);
+        public static Y5Lib_Human_GetByUID GetByUID = Marshal.GetDelegateForFunctionPointer<Y5Lib_Human_GetByUID>((IntPtr)0x140BE3FC0);
+
         public HumanDraw Model { get { return new HumanDraw() { Pointer = Y5Lib_Human_Getter_Model(Pointer) }; } }
         public HumanMotion HumanMotion { get { return new HumanMotion() { Pointer = Y5Lib_Human_Getter_Motion(Pointer) }; } }
 
+        public int aiChip => Y5Lib_Human_Getter_AI_Chip(Pointer);
         public int fighterIndex => Y5Lib_Human_Getter_Fighter_Index(Pointer);
         public VoicerID Voicer => (VoicerID)Y5Lib_Human_Getter_Voicer(Pointer);
 

@@ -14,8 +14,15 @@ public:
 	class CHumanDraw* Model; //0x0160
 	char pad_0168[1208]; //0x0168
 	void* N00004915; //0x0620
-	char pad_0628[128]; //0x0628
+	char pad_0628[12]; //0x0628
+	int32_t someFlags; //0x0634
+	char pad_0638[120]; //0x0638
+	int32_t aiChip; //0x06B0
+	char pad_06B4[4132]; //0x06B4
+	class NavigationGoal* navigationGoal; //0x16D8
+	char pad_16E0[32]; //0x16E0
 
+	virtual void VFunc51() {};
 	virtual void VFunc52() {};
 	virtual void VFunc53() {};
 	virtual void VFunc54() {};

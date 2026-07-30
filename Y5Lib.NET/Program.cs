@@ -74,6 +74,8 @@ namespace Y5Lib.NET
 
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
+            ActionCCCManager.Init();
+
             Console.WriteLine("Initialize mod");
             ModLoader.InitializeMods();
 

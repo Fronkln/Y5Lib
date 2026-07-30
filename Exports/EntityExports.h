@@ -5,22 +5,26 @@
 
 extern "C"
 {
-	Y5LIB_EXPORT inline vec4f OE_LIB_ENTITY_GET_POSITION(Entity* entity)
+	Y5LIB_EXPORT inline void OE_LIB_ENTITY_GET_POSITION(Entity* entity, __m128* in_vec)
 	{
 		if (entity == nullptr)
-			return vec4f();
+		{
+			*in_vec = _mm_setzero_ps();
+			return;
+		}
 
-		vec4f pos;
-		return entity->GetPosition(pos);
+		entity->GetPosition(in_vec);
 	}
 
-	Y5LIB_EXPORT inline vec4f OE_LIB_ENTITY_GET_CROWN_POSITION(Entity* entity)
+	Y5LIB_EXPORT inline void OE_LIB_ENTITY_GET_CROWN_POSITION(Entity* entity, __m128* in_vec)
 	{
 		if (entity == nullptr)
-			return vec4f();
+		{
+			*in_vec = _mm_setzero_ps();
+			return;
+		}
 
-		vec4f pos;
-		return entity->GetCrownPosition(pos);
+		entity->GetCrownPosition(in_vec);
 	}
 
 
@@ -30,6 +34,22 @@ extern "C"
 			return;
 
 		entity->SetPosition(value);
+	}
+
+	Y5LIB_EXPORT inline void OE_LIB_ENTITY_SET_VISIBILITY(Entity* entity, bool visible)
+	{
+		if (entity == nullptr)
+			return;
+
+		entity->SetVisibility(visible);
+	}
+
+	Y5LIB_EXPORT inline bool OE_LIB_ENTITY_IS_VISIBLE(Entity* entity)
+	{
+		if (entity == nullptr)
+			return false;
+
+		return entity->IsVisible();
 	}
 
 	Y5LIB_EXPORT inline void OE_LIB_ENTITY_WARP_TO_POSITION(Entity* entity, vec4f value)
@@ -70,5 +90,13 @@ extern "C"
 			return 0;
 
 		return entity->cccEntry;
+	}
+
+	Y5LIB_EXPORT inline bool OE_LIB_ENTITY_CAN_SHOW_TEXT_BUBBLE(Entity* entity)
+	{
+		if (entity == nullptr)
+			return false();
+
+		return entity->CanShowTextBubble();
 	}
 }

@@ -53,13 +53,20 @@ namespace Y5Lib
     public class Entity : EntityBase
     {
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ENTITY_GET_POSITION", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern Vector4 Y5Lib_Entity_GetPosition(IntPtr ent);
+        internal static extern void Y5Lib_Entity_GetPosition(IntPtr ent, out Vector4 pos);
 
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ENTITY_GET_CROWN_POSITION", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern Vector4 Y5Lib_Entity_GetCrownPosition(IntPtr ent);
+        internal static extern void Y5Lib_Entity_GetCrownPosition(IntPtr ent, out Vector4 pos);
 
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ENTITY_SET_POSITION", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Y5Lib_Entity_SetPosition(IntPtr ent, Vector4 pos);
+
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ENTITY_SET_VISIBILITY", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void Y5Lib_Entity_SetVisibility(IntPtr ent, bool visible);
+
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ENTITY_IS_VISIBLE", CallingConvention = CallingConvention.Cdecl)]
+        [return:MarshalAs(UnmanagedType.U1)]
+        internal static extern bool Y5Lib_Entity_IsVisible(IntPtr ent);
 
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ENTITY_WARP_TO_POSITION", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Y5Lib_Entity_WarpToPosition(IntPtr ent, Vector4 pos);
@@ -73,8 +80,24 @@ namespace Y5Lib
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ENTITY_GETTER_INPUT_CONTROLLER", CallingConvention = CallingConvention.Cdecl)]
         internal static extern IntPtr Y5Lib_Entity_Getter_Input_Controller(IntPtr ent);
 
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ENTITY_CAN_SHOW_TEXT_BUBBLE", CallingConvention = CallingConvention.Cdecl)]
+        [return:MarshalAs(UnmanagedType.U1)]
+        internal static extern bool Y5Lib_Entity_CanShowTextBubble(IntPtr ent);
+
         public EntityUID UID { get { return Y5Lib_Entity_Getter_UID(Pointer); } }
-        public Vector3 Position { get { return Y5Lib_Entity_GetPosition(Pointer); } set { Y5Lib_Entity_SetPosition(Pointer, value); } }
+        public Vector3 Position 
+        { 
+            get 
+            { 
+                Vector4 pos; 
+                Y5Lib_Entity_GetPosition(Pointer, out pos); 
+                return pos; 
+            } 
+            set 
+            { 
+                Y5Lib_Entity_SetPosition(Pointer, value); 
+            } 
+        }
         public ushort RotationY { get { return Y5Lib_Entity_Getter_RotationY(Pointer); } }
 
         public EntityMsgComponent MSG { get; private set; }
@@ -97,9 +120,27 @@ namespace Y5Lib
             Y5Lib_Entity_WarpToPosition(Pointer, pos);
         }
 
-        public Vector3 GetCrownOffset()
+        public Vector3 GetCrownPosition()
         {
-            return Y5Lib_Entity_GetCrownPosition(Pointer);
+            Vector4 result;
+            Y5Lib_Entity_GetCrownPosition(Pointer, out result);
+
+            return result;
+        }
+
+        public bool CanShowTextBubble()
+        {
+            return Y5Lib_Entity_CanShowTextBubble(Pointer);
+        }
+
+        public void SetVisible(bool visible)
+        {
+            Y5Lib_Entity_SetVisibility(Pointer, visible);
+        }
+
+        public bool IsVisible()
+        {
+            return Y5Lib_Entity_IsVisible(Pointer);
         }
     }
 }

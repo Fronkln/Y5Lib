@@ -18,7 +18,7 @@ class CMsgPlay
 
 public:
 	char pad_0008[24]; //0x0008
-	void *somePlaybackData; //0x0020
+	void* somePlaybackData; //0x0020
 	char pad_0028[4]; //0x0028
 	int32_t isRunning; //0x002C set to 0 and the whole thing is paused
 	char pad_0030[12]; //0x0030
@@ -32,12 +32,19 @@ public:
 	char pad_048C[12]; //0x048C
 	float currentEventFrameTime; //0x0498
 	char pad_049C[4]; //0x049C
-	MsgPlayEventSettings* eventSetting; //0x04A0
+	class MsgPlayEventSettings* eventSetting; //0x04A0
 	int32_t someFlags; //0x04A8
 	uint8_t nextEventOverrideFlag; //0x04AC not always set, probably only during branch node etc
 	char pad_04AD[35]; //0x04AD
 	uint8_t N00004547; //0x04D0
-	char pad_04D1[1311]; //0x04D1
+	char pad_04D1[111]; //0x04D1
+	int32_t isVoicedPage; //0x0540
+	char currentVoicePath[260]; //0x0544
+	char pad_0648[4]; //0x0648
+	float currentEventTotalFrameTime; //0x064C
+	char pad_0650[8488]; //0x0650
+	int32_t N000066FD; //0x2778
+	char pad_277C[628]; //0x277C
 
 	virtual void Func0() {};
 	virtual void Func1() {};
