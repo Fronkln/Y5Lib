@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Y5Lib</RootNamespace>
     <AssemblyName>Y5Lib.NET</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -82,6 +82,7 @@
     <Compile Include="Objects\Class\CameraBase.cs" />
     <Compile Include="Objects\Class\ActionReactorManager.cs" />
     <Compile Include="Objects\Class\CriADX2Player.cs" />
+    <Compile Include="Objects\Class\FileExp.cs" />
     <Compile Include="Objects\Class\HumanInfo.cs" />
     <Compile Include="Objects\Class\DanceBtlPlayer.cs" />
     <Compile Include="Objects\Class\Enemy.cs" />
