@@ -12,7 +12,7 @@ namespace Y5Lib
         [FieldOffset(8)]
         public short N000067F3; //0x0010
         [FieldOffset(10)]
-        public short N000067FA; //0x0012
+        public short notCentered; //0x0012
         [FieldOffset(12)]
         public float N000067EB; //0x0014
         [FieldOffset(16)]
@@ -46,7 +46,7 @@ namespace Y5Lib
             {
                 FontSettings settings = new FontSettings();
                 settings.N000067F3 = 34;
-                settings.N000067FA = 0;
+                settings.notCentered = 0;
                 settings.N000067EB = 65535;
                 settings.Color = new RGBA(255, 255, 255, 255);
                 settings.N00006799 = 255;

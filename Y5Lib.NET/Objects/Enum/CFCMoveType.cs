@@ -2,12 +2,12 @@
 {
     public enum CFCMoveType : byte
     {
-        Invalid = 0,
-        Attack = 1,
-        Sync = 2,
-        CommandsetChange = 3,
-        CommandsetChange2 = 4,
-        Unknown = 5,
-        HAct = 6,
+        Invalid = 0x0,
+        Attack = 0x1,
+        Sync = 0x2,
+        CommandsetChange = 0x3,
+        CommandsetChange2 = 0x4,
+        HAct = 0x5,
+        Unknown = 0x6,
     };
 }

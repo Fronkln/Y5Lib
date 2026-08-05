@@ -44,6 +44,14 @@ extern "C"
 			fighterModeMan->ToAction(id);
 	}
 
+	Y5LIB_EXPORT inline bool OE_LIB_FIGHTERMODEMANAGER_TOCOMMAND(FighterModeManager* fighterModeMan, FighterCommandID id, void* fighterCommandPiece)
+	{
+		if (fighterModeMan == nullptr)
+			return false;
+		else
+			return fighterModeMan->ToCommand(id, fighterCommandPiece);
+	}
+
 	Y5LIB_EXPORT inline void OE_LIB_FIGHTERMODEMANAGER_SET_COMMANDSET(FighterModeManager* fighterModeMan, const char* commandset)
 	{
 		if (fighterModeMan == nullptr)

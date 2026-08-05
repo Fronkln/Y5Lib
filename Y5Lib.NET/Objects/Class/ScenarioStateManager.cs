@@ -22,5 +22,10 @@ namespace Y5Lib
         {
             Marshal.Copy(buffer, 0, ActiveStateBuffer, buffer.Length);
         }
+
+        public static bool CheckState(int stateGroup, int state, bool unknown = true)
+        {
+            return false;
+        }
     }
 }

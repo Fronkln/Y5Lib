@@ -28,6 +28,11 @@ namespace Y5Lib
             }
         }
 
+        public EntityUID(ushort serial, ushort kind)
+        {
+            UID = (kind << 16) | serial;
+        }
+
 
         public override bool Equals(object obj) => obj != null && obj is EntityUID other && Equals(other);
 

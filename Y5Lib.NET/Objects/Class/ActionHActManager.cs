@@ -23,6 +23,8 @@ namespace Y5Lib
         internal static extern void Y5Lib_HActManager_RegisterFighterOnHAct(int hactIdx, string replaceName, int fighterIndex, int unknown = 1);
 
 
+        public static bool Active => Current.Pointer != IntPtr.Zero;
+
 
         public static HAct Current
         {

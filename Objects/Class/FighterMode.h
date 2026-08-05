@@ -25,11 +25,13 @@ public:
 	class DamageInfo damageInfo; //0x0020
 }; //Size: 0x00B0
 
+typedef bool (__fastcall* FIGHTERMODEMANAGER_ToCommand)(FighterModeManager* fModeMan, FighterCommandID command, void* fighterCommandPiece);
 typedef void* (__fastcall* FIGHTERMODEMANAGER_SetCommandSet)(FighterModeManager* fModeMan, int unk1, const char* commandsetName);
 typedef FighterCommandID* (__fastcall* FIGHTERMODEMANAGER_GetCurrentCommand)(FighterModeManager* fModeMan, FighterCommandID& in_command);
 
 class FighterModeManager
 {
+	static FIGHTERMODEMANAGER_ToCommand ASM_ToCommand;
 	static FIGHTERMODEMANAGER_SetCommandSet ASM_SetCommandset;
 	static FIGHTERMODEMANAGER_GetCurrentCommand ASM_GetCurrentCommand;
 
@@ -45,6 +47,11 @@ public:
 	int32_t activeCommandset; //0x0220
 	int32_t commandSets[3]; //0x0224
 	char pad_0230[64]; //0x0230
+
+	bool ToCommand(FighterCommandID command, void* fighterCommandPiece)
+	{
+		return ASM_ToCommand(this, command, fighterCommandPiece);
+	}
 
 	void SetCommandset(int unk1, const char* commandsetName)
 	{

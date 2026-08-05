@@ -120,6 +120,7 @@
     <Compile Include="Objects\Enum\CFCMoveType.cs" />
     <Compile Include="Objects\Enum\EntityBucketID.cs" />
     <Compile Include="Objects\Enum\FighterFlag.cs" />
+    <Compile Include="Objects\Enum\HActReplaceID.cs" />
     <Compile Include="Objects\Enum\InputDeviceType.cs" />
     <Compile Include="Objects\Enum\JobPhase.cs" />
     <Compile Include="Objects\Enum\MissionID.cs" />
@@ -139,8 +140,11 @@
     <Compile Include="Objects\Struct\EnemyDisposeInfo.cs" />
     <Compile Include="Objects\Struct\EntityBucketNode.cs" />
     <Compile Include="Objects\Struct\FighterCommandID.cs" />
+    <Compile Include="Objects\Struct\FighterTriggerStatus.cs" />
     <Compile Include="Objects\Struct\FixedString32.cs" />
     <Compile Include="Objects\Struct\FontSettings.cs" />
+    <Compile Include="Objects\Struct\HActPlayData.cs" />
+    <Compile Include="Objects\Struct\HActRegister.cs" />
     <Compile Include="Objects\Struct\Matrix4x4.cs" />
     <Compile Include="Objects\Struct\MsgPopupParams.cs" />
     <Compile Include="Objects\Struct\Msg\MsgEntityEntry.cs" />

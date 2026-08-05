@@ -13,6 +13,5 @@ namespace Y5Lib
             IntPtr commandDataPtr = Y5Lib_FighterCommandManager_GetCommandInfo(command);
             return Marshal.PtrToStructure<CFCMove>(commandDataPtr);
         }
-
     }
 }

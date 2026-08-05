@@ -12,7 +12,7 @@ namespace Y5Lib
         public static extern void DrawText(string text);
 
 
-        public static void DrawText(string text,  FontSettings settings)
+        public static void DrawText(string text, FontSettings settings)
         {
             PushSettings(ref settings);
             DrawText(text);

@@ -22,6 +22,10 @@ namespace Y5Lib
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTERMODEMANAGER_GETTER_CURRENT_MODE", CallingConvention = CallingConvention.Cdecl)]
         internal static extern IntPtr Y5Lib_FighterModeManager_Getter_CurrentMode(IntPtr fmManager);
 
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTERMODEMANAGER_TOCOMMAND", CallingConvention = CallingConvention.Cdecl)]
+        [return: MarshalAs(UnmanagedType.U1)]
+        private static extern bool Y5Lib_FighterModeManager_ToCommand(IntPtr fmManager, FighterCommandID command, ref FighterTriggerStatus triggerStatus);
+
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTERMODEMANAGER_SET_COMMANDSET", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Y5Lib_FighterModeManager_Set_Commandset(IntPtr fmManager, string commandset);
 
@@ -65,7 +69,10 @@ namespace Y5Lib
         public int CurrentCommandset => Y5Lib_FighterModeManager_GetCurrentCommandSet(Pointer);
 
 
+        public bool ToCommand(FighterCommandID command, FighterTriggerStatus status) => Y5Lib_FighterModeManager_ToCommand(Pointer, command, ref status);
+
         public void ToAttack(FighterCommandID attack) => Y5Lib_FighterModeManager_ToAttack(Pointer, attack);
+        public void ToProvoke(FighterCommandID attack) => Y5Lib_FighterModeManager_ToProvoke(Pointer, attack);
         public void ToAction(FighterCommandID action) => Y5Lib_FighterModeManager_ToAction(Pointer, action);
 
 

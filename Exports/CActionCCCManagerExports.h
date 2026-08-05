@@ -207,12 +207,18 @@ extern "C"
 		if (play == nullptr)
 			return false;
 
+		if (play->eventSetting == nullptr)
+			return true;
+
 		return play->eventSetting->textComplete;
 	}
 
 	Y5LIB_EXPORT inline void OE_LIB_CMSGPLAY_SETTER_IS_TEXT_COMPLETE(CMsgPlay* play, bool value)
 	{
 		if (play == nullptr)
+			return;
+
+		if (play->eventSetting == nullptr)
 			return;
 
 		play->eventSetting->textComplete = value;
