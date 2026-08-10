@@ -6,7 +6,7 @@ namespace Y5Lib
     public class Player : Fighter
     {
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_PLAYER_GET_CURRENT_ID", CallingConvention = CallingConvention.Cdecl)]
-        public static extern int GetCurrentID();
+        public static extern PlayerID GetCurrentID();
         public static bool IsKiryu()
         {
             return GetCurrentID() == 0;
@@ -14,7 +14,7 @@ namespace Y5Lib
 
         public static bool IsHaruka()
         {
-            return GetCurrentID() == 4;
+            return GetCurrentID() == PlayerID.Haruka;
         }
     }
 
