@@ -12,7 +12,7 @@ namespace Y5Lib
 
             int i = 0;
 
-            while (letters[i] != 0 && i < letters.Length)
+            while (i < letters.Length && letters[i] != 0)
             {
                 builder.Append(letters[i]);
                 i++;

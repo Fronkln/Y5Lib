@@ -9,6 +9,7 @@ class CActionMotionManager;
 typedef void (__fastcall* MOTIONMANAGER_LoadImportantResources)(CActionMotionManager* motMan, bool isBattle);
 typedef void* (__fastcall* MOTIONMANAGER_LoadGMTDirect)(MotionResourceManager* motMan, unsigned int gmtID, int unknown, int heapCategory);
 typedef void (__fastcall* MOTIONRESOURCEMANAGER_LoadMotionPar)(MotionResourceManager* motMan, char* path, int a1, int a2, int a3, int a4, int a5);
+typedef void(__fastcall* MOTIONRESOURCEMANAGER_LoadMotionParToID)(MotionResourceManager* motMan, char* path, int a1, int a2, int a3);
 typedef void (__fastcall* MOTIONRESOURCEMANAGER_LoadMotionParWithID)(MotionResourceManager* motMan, int id, int a2);
 typedef bool(__fastcall* MOTIONRESOURCEMANAGER_IsMotionParIDLoaded)(MotionResourceManager* motMan, int id);
 
@@ -29,6 +30,7 @@ class MotionResourceManager
 {
 	static MOTIONMANAGER_LoadGMTDirect ASM_LoadGMTDirect;
 	static MOTIONRESOURCEMANAGER_LoadMotionPar ASM_LoadPar;
+	static MOTIONRESOURCEMANAGER_LoadMotionParToID ASM_LoadParToID;
 	static MOTIONRESOURCEMANAGER_LoadMotionParWithID ASM_LoadParWithID;
 	static MOTIONRESOURCEMANAGER_IsMotionParIDLoaded ASM_IsMotionParIDLoaded;
 public:
@@ -43,6 +45,11 @@ public:
 	void LoadPar(char* path, int a1, int a2, int a3, int a4, int a5)
 	{
 		ASM_LoadPar(this, path, a1, a2, a3, a4, a5);
+	}
+
+	void LoadParToID(char* path, int ID, int a2, int a3)
+	{
+		ASM_LoadParToID(this, path, ID, a2, a3);
 	}
 
 	void LoadParWithID(int a1, int a2)

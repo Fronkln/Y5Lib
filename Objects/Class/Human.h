@@ -12,9 +12,13 @@ public:
 	Motion::EntityMotion* Motion; //0x0140
 	char pad_0148[24]; //0x0148
 	class CHumanDraw* Model; //0x0160
-	char pad_0168[1208]; //0x0168
+	char pad_0168[152]; //0x0168
+	int32_t humanFlags; //0x0200
+	char pad_0204[1052]; //0x0204
 	void* N00004915; //0x0620
-	char pad_0628[12]; //0x0628
+	char pad_0628[8]; //0x0628
+	uint8_t N00004917; //0x0630
+	char pad_0631[3]; //0x0631
 	int32_t someFlags; //0x0634
 	char pad_0638[120]; //0x0638
 	int32_t aiChip; //0x06B0

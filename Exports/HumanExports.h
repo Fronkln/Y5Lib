@@ -20,6 +20,23 @@ extern "C"
 			return ent->Model;
 	}
 
+
+	Y5LIB_EXPORT inline int OE_LIB_HUMAN_GETTER_FLAGS(Human* ent)
+	{
+		if (ent == nullptr)
+			return 0;
+		else
+			return ent->humanFlags;
+	}
+
+	Y5LIB_EXPORT inline void OE_LIB_HUMAN_SETTER_FLAGS(Human* ent, int flags)
+	{
+		if (ent == nullptr)
+			return;
+		else
+			ent->humanFlags = flags;
+	}
+
 	Y5LIB_EXPORT inline int OE_LIB_HUMAN_GETTER_FIGHTER_INDEX(Human* human)
 	{
 		if (human == nullptr)

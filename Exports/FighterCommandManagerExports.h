@@ -9,4 +9,14 @@ extern "C"
 	{
 		return FighterCommandManager::GetCommandInfo(command);
 	}
+
+	Y5LIB_EXPORT inline int OE_LIB_FIGHTERCOMMANDMANAGER_FIND_COMMANDSET_ID(const char* commandsetName)
+	{
+		FighterCommandManager* fcMan = *FighterCommandManager::Instance;
+
+		int result = 0;
+		fcMan->FindCommandsetID(result, commandsetName);
+
+		return result;
+	}
 }

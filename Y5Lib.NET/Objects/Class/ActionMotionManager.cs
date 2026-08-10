@@ -14,6 +14,9 @@ namespace Y5Lib
 
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONMOTIONMANAGER_LOAD_PAR", CallingConvention = CallingConvention.Cdecl)]
         public static extern void LoadPar(string path);
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONMOTIONMANAGER_LOAD_PAR_TO_ID", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void LoadParToID(string path, int id);
+
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONMOTIONMANAGER_LOAD_PAR_WITH_ID", CallingConvention = CallingConvention.Cdecl)]
         public static extern void LoadParWithID(int id, int unknown);
 

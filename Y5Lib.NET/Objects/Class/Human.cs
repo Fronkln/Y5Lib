@@ -11,6 +11,12 @@ namespace Y5Lib
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_HUMAN_GETTER_MODEL", CallingConvention = CallingConvention.Cdecl)]
         internal static extern IntPtr Y5Lib_Human_Getter_Model(IntPtr ent);
 
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_HUMAN_GETTER_FLAGS", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Y5Lib_Human_Getter_Flags(IntPtr ent);
+
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_HUMAN_SETTER_FLAGS", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void Y5Lib_Human_Setter_Flags(IntPtr ent, int flags);
+
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_HUMAN_GETTER_FIGHTER_INDEX", CallingConvention = CallingConvention.Cdecl)]
         internal static extern int Y5Lib_Human_Getter_Fighter_Index(IntPtr fighter);
 
@@ -32,6 +38,12 @@ namespace Y5Lib
 
         public int aiChip => Y5Lib_Human_Getter_AI_Chip(Pointer);
         public int fighterIndex => Y5Lib_Human_Getter_Fighter_Index(Pointer);
+        public int humanFlags
+        {
+            get => Y5Lib_Human_Getter_Flags(Pointer);
+            set => Y5Lib_Human_Setter_Flags(Pointer, value);
+        }
+
         public VoicerID Voicer => (VoicerID)Y5Lib_Human_Getter_Voicer(Pointer);
 
         public bool IsPlayer() => Y5Lib_Human_IsPlayer(Pointer);

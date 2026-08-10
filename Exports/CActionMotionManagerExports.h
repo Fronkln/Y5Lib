@@ -32,6 +32,19 @@ extern "C"
 		actMan->actionMotionManager->MotionResourceManager.LoadPar(path, 6, 0xD, 1, 1, -2);
 	}
 
+	Y5LIB_EXPORT inline void OE_LIB_ACTIONMOTIONMANAGER_LOAD_PAR_TO_ID(char* path, int id)
+	{
+		CActionManager* actMan = *OE::ActionManager;
+
+		if (actMan == nullptr)
+			return;
+
+		if (actMan->actionMotionManager == nullptr)
+			return;
+
+		actMan->actionMotionManager->MotionResourceManager.LoadParToID(path, id, 1, 1);
+	}
+
 	Y5LIB_EXPORT inline void OE_LIB_ACTIONMOTIONMANAGER_LOAD_PAR_WITH_ID(int id, int a2)
 	{
 		CActionManager* actMan = *OE::ActionManager;
