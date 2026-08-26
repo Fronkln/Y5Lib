@@ -4,19 +4,19 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.ExceptionServices;
 using System.Runtime.InteropServices;
-using System.Runtime.Remoting.Messaging;
 using System.Security;
 using System.Threading;
 
 namespace Y5Lib.NET
 {
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate int InitializeDelegate(IntPtr gameDirectory);
+
+
     internal class Program
     {
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern IntPtr LoadLibrary(string libname);
-
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate int InitializeDelegate(IntPtr gameDirectory);
 
         public static int Initialize(IntPtr gameDirectory)
         {
@@ -24,7 +24,7 @@ namespace Y5Lib.NET
             {
                 string directory = Marshal.PtrToStringUni(gameDirectory);
 
-                OE.BaseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                OE.BaseDirectory = Environment.CurrentDirectory;
                 OE.Root = directory;
 
                 //Environment.CurrentDirectory = OE.Root;
@@ -41,7 +41,7 @@ namespace Y5Lib.NET
                 if (LoadLibrary(libPath) == IntPtr.Zero)
                 {
                     OE.LogError("Failed to load the library! " + "GetLastWinError32:" + Marshal.GetLastWin32Error());
-                    return;
+                    return -1;
                 }
                 else
                     OE.LogInfo("Loaded Y5Library, initialization time!");
@@ -66,7 +66,10 @@ namespace Y5Lib.NET
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
+                return -1;
             }
+
+            return 0;
         }
 
         static void InitThread()
