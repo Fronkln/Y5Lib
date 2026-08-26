@@ -20,9 +20,10 @@ namespace Y5Lib
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONMOTIONMANAGER_LOAD_PAR_WITH_ID", CallingConvention = CallingConvention.Cdecl)]
         public static extern void LoadParWithID(int id, int unknown);
 
-        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONMOTIONMANAGER_IS_MOTION_PAR_ID_LOADED", CallingConvention = CallingConvention.Cdecl)]
-        [return:MarshalAs(UnmanagedType.U1)]
-        public static extern bool IsMotionParIDLoaded(int id);
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONMOTIONMANAGER_GET_MOTION_PAR_ID_STATE", CallingConvention = CallingConvention.Cdecl)]
+        public static extern int GetMotionParIDState(int id);
+
+        public static bool IsMotionParIDLoaded(int id) => GetMotionParIDState(id) == 4;
 
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONMOTIONMANAGER_GET_GMT_ID", CallingConvention = CallingConvention.Cdecl)]
         public static extern uint GetGMTID(string name);

@@ -15,12 +15,17 @@ namespace Y5Lib.NET
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern IntPtr LoadLibrary(string libname);
 
-        static void Main(string[] args)
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        public delegate int InitializeDelegate(IntPtr gameDirectory);
+
+        public static int Initialize(IntPtr gameDirectory)
         {
             try
             {
+                string directory = Marshal.PtrToStringUni(gameDirectory);
+
                 OE.BaseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                OE.Root = args[0];
+                OE.Root = directory;
 
                 //Environment.CurrentDirectory = OE.Root;
                 OE._LogPath = Path.Combine(OE.Root, "log.txt");
@@ -74,9 +79,12 @@ namespace Y5Lib.NET
 
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
+            Console.WriteLine("Initializing native functions");
+            NativeFunctions.NativeFunction.Init();
+
             ActionCCCManager.Init();
 
-            Console.WriteLine("Initialize mod");
+            Console.WriteLine("Initialize mods");
             ModLoader.InitializeMods();
 
             Environment.CurrentDirectory = OE.BaseDirectory;

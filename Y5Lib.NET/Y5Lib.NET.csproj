@@ -9,6 +9,7 @@
     <RootNamespace>Y5Lib</RootNamespace>
     <AssemblyName>Y5Lib.NET</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>latest</LangVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -59,13 +60,15 @@
     <Compile Include="Extensions.cs" />
     <Compile Include="ImGui.cs" />
     <Compile Include="ModLoader.cs" />
+    <Compile Include="NativeFunctions\CActionCameraManagerNativeFunctions.cs" />
+    <Compile Include="NativeFunctions\NativeFunction.cs" />
     <Compile Include="Objects\Class\ActionAuthManager.cs" />
     <Compile Include="Objects\Class\ActionCameraManager.cs" />
     <Compile Include="Objects\Class\ActionCCCManager.cs" />
     <Compile Include="Objects\Class\ActionCtrlTypeManager.cs" />
     <Compile Include="Objects\Class\ActionDanceBattleManager.cs" />
     <Compile Include="Objects\Class\ActionDanceEventManager.cs" />
-    <Compile Include="Objects\Class\ActionEnemyDisposeManager.cs" />
+    <Compile Include="Objects\Class\ActionEncountManager.cs" />
     <Compile Include="Objects\Class\ActionEntityManager.cs" />
     <Compile Include="Objects\Class\ActionFighterManager.cs" />
     <Compile Include="Objects\Class\ActionFighterSyncManager.cs" />

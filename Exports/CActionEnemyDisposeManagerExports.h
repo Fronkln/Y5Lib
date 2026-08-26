@@ -8,7 +8,7 @@
 extern "C"
 {
 
-	Y5LIB_EXPORT inline char* OE_LIB_ACTIONENEMYDISPOSEMANAGER_GET_START_HACT()
+	Y5LIB_EXPORT inline char* OE_LIB_ACTIONENCOUNTMANAGER_GET_START_HACT()
 	{
 		CActionManager* actMan = *OE::ActionManager;
 
@@ -21,7 +21,7 @@ extern "C"
 		auto ptr = (char*)actMan->enemyDisposeManager->startHAct;
 		return ptr;
 	}
-	Y5LIB_EXPORT inline void OE_LIB_ACTIONENEMYDISPOSEMANAGER_SET_START_HACT(const char* hact)
+	Y5LIB_EXPORT inline void OE_LIB_ACTIONENCOUNTMANAGER_SET_START_HACT(const char* hact)
 	{
 		CActionManager* actMan = *OE::ActionManager;
 
@@ -34,7 +34,7 @@ extern "C"
 		strcpy_s(actMan->enemyDisposeManager->startHAct, 30, hact);
 	}
 
-	Y5LIB_EXPORT inline int OE_LIB_ACTIONENEMYDISPOSEMANAGER_ADD_ENEMY_DISPOSE(EnemyDisposeInfo* enemyDispose)
+	Y5LIB_EXPORT inline int OE_LIB_ACTIONENCOUNTMANAGER_ADD_ENEMY_DISPOSE(EnemyDisposeInfo* enemyDispose)
 	{
 		CActionManager* actMan = *OE::ActionManager;
 
@@ -53,7 +53,7 @@ extern "C"
 	}
 
 
-	Y5LIB_EXPORT inline int OE_LIB_ACTIONENEMYDISPOSEMANAGER_GET_ENEMY_COUNT(EnemyDisposeInfo* enemyDispose)
+	Y5LIB_EXPORT inline int OE_LIB_ACTIONENCOUNTMANAGER_GET_ENEMY_COUNT(EnemyDisposeInfo* enemyDispose)
 	{
 		CActionManager* actMan = *OE::ActionManager;
 
@@ -68,7 +68,7 @@ extern "C"
 		return enemyDisposeManager->enemyDisposesCount;
 	}
 
-	Y5LIB_EXPORT inline EnemyDisposeInfo* OE_LIB_ACTIONENEMYDISPOSEMANAGER_GET_ENEMY_DISPOSE(int enemyIndex)
+	Y5LIB_EXPORT inline EnemyDisposeInfo* OE_LIB_ACTIONENCOUNTMANAGER_GET_ENEMY_DISPOSE(int enemyIndex)
 	{
 		CActionManager* actMan = *OE::ActionManager;
 

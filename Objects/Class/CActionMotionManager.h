@@ -11,7 +11,7 @@ typedef void* (__fastcall* MOTIONMANAGER_LoadGMTDirect)(MotionResourceManager* m
 typedef void (__fastcall* MOTIONRESOURCEMANAGER_LoadMotionPar)(MotionResourceManager* motMan, char* path, int a1, int a2, int a3, int a4, int a5);
 typedef void(__fastcall* MOTIONRESOURCEMANAGER_LoadMotionParToID)(MotionResourceManager* motMan, char* path, int a1, int a2, int a3);
 typedef void (__fastcall* MOTIONRESOURCEMANAGER_LoadMotionParWithID)(MotionResourceManager* motMan, int id, int a2);
-typedef bool(__fastcall* MOTIONRESOURCEMANAGER_IsMotionParIDLoaded)(MotionResourceManager* motMan, int id);
+typedef bool(__fastcall* MOTIONRESOURCEMANAGER_GetMotionParIDState)(MotionResourceManager* motMan, int id);
 
 typedef unsigned int (__fastcall* FILEMOTIONPROPERTY_GetGMTID)(CFileMotionProperty* fileMotProperty, char* gmtName);
 
@@ -32,7 +32,7 @@ class MotionResourceManager
 	static MOTIONRESOURCEMANAGER_LoadMotionPar ASM_LoadPar;
 	static MOTIONRESOURCEMANAGER_LoadMotionParToID ASM_LoadParToID;
 	static MOTIONRESOURCEMANAGER_LoadMotionParWithID ASM_LoadParWithID;
-	static MOTIONRESOURCEMANAGER_IsMotionParIDLoaded ASM_IsMotionParIDLoaded;
+	static MOTIONRESOURCEMANAGER_GetMotionParIDState ASM_GetMotionParIDState;
 public:
 	void* vfptr; //0x0000
 	char pad_0008[19224]; //0x0008
@@ -57,9 +57,9 @@ public:
 		ASM_LoadParWithID(this, a1, a2);
 	}
 
-	bool IsMotionParIDLoaded(int id)
+	int GetMotionParIDState(int id)
 	{
-		return ASM_IsMotionParIDLoaded(this, id);
+		return ASM_GetMotionParIDState(this, id);
 	}
 
 }; //Size: 0x4B20

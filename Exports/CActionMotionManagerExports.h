@@ -58,7 +58,7 @@ extern "C"
 		actMan->actionMotionManager->MotionResourceManager.LoadParWithID(id, a2);
 	}
 
-	Y5LIB_EXPORT inline bool OE_LIB_ACTIONMOTIONMANAGER_IS_MOTION_PAR_ID_LOADED(int id)
+	Y5LIB_EXPORT inline int OE_LIB_ACTIONMOTIONMANAGER_GET_MOTION_PAR_ID_STATE(int id)
 	{
 		CActionManager* actMan = *OE::ActionManager;
 
@@ -68,7 +68,7 @@ extern "C"
 		if (actMan->actionMotionManager == nullptr)
 			return 0;
 
-		return actMan->actionMotionManager->MotionResourceManager.IsMotionParIDLoaded(id);
+		return actMan->actionMotionManager->MotionResourceManager.GetMotionParIDState(id);
 	}
 
 	Y5LIB_EXPORT inline unsigned int OE_LIB_ACTIONMOTIONMANAGER_GET_GMT_ID(char* gmtName)

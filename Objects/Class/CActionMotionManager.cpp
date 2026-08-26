@@ -6,5 +6,5 @@ MOTIONMANAGER_LoadGMTDirect MotionResourceManager::ASM_LoadGMTDirect = (MOTIONMA
 MOTIONRESOURCEMANAGER_LoadMotionPar MotionResourceManager::ASM_LoadPar = (MOTIONRESOURCEMANAGER_LoadMotionPar)(Memory::ReadCall2(PatternScan("E8 ? ? ? ? 90 48 89 BB ? ? ? ? 48 8D 8B ? ? ? ? 48 8D 05")));
 MOTIONRESOURCEMANAGER_LoadMotionParToID MotionResourceManager::ASM_LoadParToID = (MOTIONRESOURCEMANAGER_LoadMotionParToID)(Memory::ReadCall2(PatternScan("E8 ? ? ? ? 89 9F ? ? ? ? 48 8B 8C 24")));
 MOTIONRESOURCEMANAGER_LoadMotionParWithID MotionResourceManager::ASM_LoadParWithID = (MOTIONRESOURCEMANAGER_LoadMotionParWithID)(Memory::ReadCall2(PatternScan("E9 ? ? ? ? 48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24")));
-MOTIONRESOURCEMANAGER_IsMotionParIDLoaded MotionResourceManager::ASM_IsMotionParIDLoaded = (MOTIONRESOURCEMANAGER_IsMotionParIDLoaded)(Memory::ReadCall2(PatternScan("E8 ? ? ? ? 85 C0 75 ? 8D 50 ? EB ? 48 8B 0D")));
+MOTIONRESOURCEMANAGER_GetMotionParIDState MotionResourceManager::ASM_GetMotionParIDState = (MOTIONRESOURCEMANAGER_GetMotionParIDState)(Memory::ReadCall2(PatternScan("E8 ? ? ? ? 85 C0 75 ? 8D 50 ? EB ? 48 8B 0D")));
 FILEMOTIONPROPERTY_GetGMTID CFileMotionProperty::ASM_GetGMTID = (FILEMOTIONPROPERTY_GetGMTID)(Memory::ReadCall2(PatternScan("E8 ? ? ? ? 89 87 ? ? ? ? 48 8D 9F")));
