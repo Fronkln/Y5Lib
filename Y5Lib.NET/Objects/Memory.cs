@@ -34,5 +34,14 @@ namespace Y5Lib
         public static void PopAllocCategory() => NativeFunctions.MemoryNativeFunctions.PopAllocCategory();
         public static IntPtr Alloc2(int size, string description, int unknown) => NativeFunctions.MemoryNativeFunctions.Alloc2(size, description, unknown);
 
+        public static IntPtr AllocSimple(HeapCategory heapCategory, int size, string description, int unknown)
+        {
+            PushAllocCategory(heapCategory, 0, 0);
+            IntPtr allocated = Alloc2(size, description, unknown);
+            PopAllocCategory();
+
+            return allocated;
+        }
+
     }
 }

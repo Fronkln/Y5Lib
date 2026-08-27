@@ -17,5 +17,7 @@ namespace Y5Lib
         {
             return new T() { Pointer = Y5Lib_ActionEntityManager_GetEntityByUID(uid) };
         }
+
+        public static void RegisterEntity(Entity entity) => NativeFunctions.CActEntityManagerNativeFunctions.RegisterEntity(entity);
     }
 }

@@ -10,7 +10,9 @@ namespace Y5Lib.NativeFunctions
     {
         public static void Init()
         {
+            EntityNativeFunctions.Init();
             MemoryNativeFunctions.Init();
+            CActEntityManagerNativeFunctions.Init();
             CActionCameraManagerNativeFunctions.Init();
         }
     }

@@ -8,7 +8,7 @@ namespace Y5Lib
     {
         public unsafe fixed byte ModelName[32]; //0x0000
         public unsafe fixed byte pad_0020[32]; //0x0020
-        public long Flags;
+        public long AnimationID;
 
         public VehiclePassengerData()
         {

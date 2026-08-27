@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Y5Lib
 {
-    //Multiple inheritance likely?
-    public class EntityBase
+    public class EntityBase : UnmanagedVirtualObject
     {
-        public IntPtr Pointer;
     }
 }
