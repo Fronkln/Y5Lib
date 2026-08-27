@@ -22,7 +22,7 @@ namespace Y5Lib
         internal static extern uint Y5Lib_ActionSequenceManager_Getter_SequencePhase();
 
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_SEQUENCEMANAGER_GETTER_IS_LOADING", CallingConvention = CallingConvention.Cdecl)]
-        [return:MarshalAs(UnmanagedType.U1)]
+        [return: MarshalAs(UnmanagedType.U1)]
         internal static extern bool Y5Lib_ActionSequenceManager_Getter_IsLoading();
 
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_SEQUENCEMANAGER_GETTER_CURRENT_MISSION_SCENARIO", CallingConvention = CallingConvention.Cdecl)]
@@ -85,7 +85,7 @@ namespace Y5Lib
         public static int UnknownMode { get { return Y5Lib_ActionSequenceManager_Getter_UnknownMode(); } }
         public static int NextUnknownMode { get { return Y5Lib_ActionSequenceManager_Getter_NextUnknownMode(); } }
 
-        public static Vector3 NextPlayerPosition { get {  return Y5Lib_ActionSequenceManager_Getter_NextPlayerPosition(); }  }
+        public static Vector3 NextPlayerPosition { get { return Y5Lib_ActionSequenceManager_Getter_NextPlayerPosition(); } }
 
         public static uint SequencePhase { get { return Y5Lib_ActionSequenceManager_Getter_SequencePhase(); } }
         public static bool IsLoading { get { return Y5Lib_ActionSequenceManager_Getter_IsLoading(); } }
@@ -96,6 +96,16 @@ namespace Y5Lib
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_SEQUENCEMANAGER_ALLOW_MISSION_TRANSITION", CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern void AllowMissionTransition(bool allow);
+
+        public static bool IsBattleMission(MissionID missionID)
+        {
+            return missionID == MissionID.UltimateBattle || missionID == MissionID.EncounterBattle || missionID == MissionID.ScriptedBattle;
+        }
+
+        public static bool IsDriveMission(MissionID missionID)
+        {
+            return (int)missionID == 600;
+        }
 
     }
 }

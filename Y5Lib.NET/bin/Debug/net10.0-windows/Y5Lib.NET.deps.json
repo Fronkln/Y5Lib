@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Y5Lib.NET/1.0.0": {
+        "runtime": {
+          "Y5Lib.NET.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Y5Lib.NET/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

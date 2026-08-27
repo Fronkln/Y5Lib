@@ -15,5 +15,7 @@ namespace Y5Lib
                 return new CameraBase() { Pointer = Y5Lib_ActionCameraManager_Getter_ActiveCamera() };
             }
         }
+
+        public static void SetActiveCamera(int cameraIndex, int transitionID = 0) => NativeFunctions.CActionCameraManagerNativeFunctions.SetActiveCamera(cameraIndex, transitionID);
     }
 }

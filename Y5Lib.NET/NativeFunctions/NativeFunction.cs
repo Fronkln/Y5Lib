@@ -10,6 +10,7 @@ namespace Y5Lib.NativeFunctions
     {
         public static void Init()
         {
+            MemoryNativeFunctions.Init();
             CActionCameraManagerNativeFunctions.Init();
         }
     }

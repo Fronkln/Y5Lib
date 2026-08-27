@@ -47,6 +47,7 @@ namespace Y5Lib
         public VoicerID Voicer => (VoicerID)Y5Lib_Human_Getter_Voicer(Pointer);
 
         public bool IsPlayer() => Y5Lib_Human_IsPlayer(Pointer);
+        public bool IsFighter() => fighterIndex >= 0;
 
     }
 }
