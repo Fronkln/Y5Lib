@@ -29,6 +29,12 @@ namespace Y5Lib
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONMANAGER_GET_ACTION", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr GetAction(int actionID);
 
+        [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONMANAGER_GET_ACTION", CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr GetAction(ActionID actionID);
+
+        public static bool IsActionActive(ActionID id) => GetAction(id) != IntPtr.Zero;
+
+
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_ACTIONMANAGER_SET_ACTION_MODE_BITS", CallingConvention = CallingConvention.Cdecl)]
         public static extern void SetActionModeBits(int bits);
 

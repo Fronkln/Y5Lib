@@ -50,5 +50,55 @@ namespace Y5Lib
                 *((Vector4*)(Pointer + 0x1F0)) = pos;
             }
         }
+
+
+        public Vector3 GetPosition()
+        {
+            if (Pointer == IntPtr.Zero)
+                return new Vector3();
+
+            unsafe
+            {
+                return *((Vector3*)(Pointer + 0x1F0));
+            }
+        }
+
+        public float GetSpeed()
+        {
+            if (Pointer == IntPtr.Zero)
+                return 0;
+
+            unsafe
+            {
+                return *((float*)(Pointer + 0x264));
+            }
+        }
+
+        public void SetSpeed(float speed)
+        {
+            unsafe
+            {
+                *((float*)(Pointer + 0x264)) = speed;
+            }
+        }
+
+        public int GetRotY()
+        {
+            if (Pointer == IntPtr.Zero)
+                return 0;
+
+            unsafe
+            {
+                return *((int*)(Pointer + 0x250));
+            }
+        }
+
+        public void SetRotY(int rotY)
+        {
+            unsafe
+            {
+                *((int*)(Pointer + 0x250)) = rotY;
+            }
+        }
     }
 }
