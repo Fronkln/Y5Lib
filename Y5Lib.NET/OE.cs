@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.ExceptionServices;
 using System.Runtime.InteropServices;
 
 namespace Y5Lib
@@ -95,7 +96,18 @@ namespace Y5Lib
 
         public static void RegisterJob(Action action, JobPhase jobID, bool after = false)
         {
-            RegisterJobDelegate del = new RegisterJobDelegate(action);
+            RegisterJobDelegate del = () =>
+            {
+                try
+                {
+                    action();
+                }
+                catch (Exception ex)
+                {
+                    ExceptionHandling.RaiseAppDomainUnhandledExceptionEvent(ex);
+                }
+            };
+
             JobRegisterInfo inf = new JobRegisterInfo(action, del, Marshal.GetFunctionPointerForDelegate(del), (uint)jobID, after);
             _jobDelegates.Add(inf);
 

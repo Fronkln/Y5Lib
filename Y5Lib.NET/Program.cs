@@ -31,6 +31,21 @@ namespace Y5Lib.NET
                 OE._LogPath = Path.Combine(OE.Root, "log.txt");
                 File.WriteAllLines(OE._LogPath, new string[0]);
 
+                AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+
+                ExceptionHandling.SetUnhandledExceptionHandler(ex =>
+                {
+                    AppDomain.CurrentDomain.UnhandledException -= CurrentDomain_UnhandledException;  // this is important. Any exception occuring in the logging mechanism can cause a stack overflow exception which triggers the window's own JIT message/App crash message if Win JIT is not available.
+                    OE.LogInfo("*******************FATAL ERROR***************");
+                    OE.LogInfo("Inner Exception:\n" + ex.InnerException);
+                    OE.LogInfo("Message:\n" + ex.Message);
+                    OE.LogInfo("Stacktrace: \n" + ex.StackTrace);
+                    MessageBox((IntPtr)0, "Fatal error! More information available on Mods/Y5lib/log.txt. The game will now exit", "Fatal OOELibrary Error", 0x00000010);
+                    Environment.Exit(-1); // exit and avoid WER etc
+
+                    return false;
+                });
+
                 OE.LogInfo("Y5Lib Start");
 
                 string libPath = Path.Combine(OE.Root, "Y5Lib.dll");
@@ -79,8 +94,6 @@ namespace Y5Lib.NET
                 OE.Init();
                 Thread.Sleep(10);
             }
-
-            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
             Console.WriteLine("Initializing native functions");
             NativeFunctions.NativeFunction.Init();
