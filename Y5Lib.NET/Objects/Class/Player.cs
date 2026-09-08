@@ -7,6 +7,12 @@ namespace Y5Lib
     {
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_PLAYER_GET_CURRENT_ID", CallingConvention = CallingConvention.Cdecl)]
         public static extern PlayerID GetCurrentID();
+
+        public unsafe static string GetPlayerModel(int someVal = 0)
+        {
+            return Marshal.PtrToStringAnsi(NativeFunctions.PlayerNativeFunctions.GetPlayerModel(someVal));
+        }
+
         public static bool IsKiryu()
         {
             return GetCurrentID() == 0;

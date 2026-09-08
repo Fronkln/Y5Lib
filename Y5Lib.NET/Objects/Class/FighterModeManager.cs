@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 namespace Y5Lib
 {
-    public class FighterModeManager : UnmanagedObject
+    public class FighterModeManager : UnmanagedVirtualObject
     {
         [DllImport("Y5Lib.dll", EntryPoint = "OE_LIB_FIGHTERMODEMANAGER_TODEADBYDAMAGE", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Y5Lib_FighterModeManager_ToDeadByDamage(IntPtr fmManager, ref DamageInfo damage);
@@ -75,6 +75,17 @@ namespace Y5Lib
         public void ToProvoke(FighterCommandID attack) => Y5Lib_FighterModeManager_ToProvoke(Pointer, attack);
         public void ToAction(FighterCommandID action) => Y5Lib_FighterModeManager_ToAction(Pointer, action);
 
+        public void ToEquip(int weaponIdx)
+        {
+            if (Pointer == IntPtr.Zero)
+                return;
+
+            unsafe
+            {
+                var f = (delegate* unmanaged<IntPtr, int, void>)GetVirtualFunctionAtIndex(17);
+                f(Pointer, weaponIdx);
+            }
+        }
 
         public void ToDeadByDamage(DamageInfo damage) => Y5Lib_FighterModeManager_ToDeadByDamage(Pointer, ref damage);
 

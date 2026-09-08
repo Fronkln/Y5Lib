@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Y5Lib
+﻿namespace Y5Lib
 {
     public enum ActionID : int
     {
+        CCCManager = 41,
+        Continue = 71,
         TaxiRaceManager = 199,
         DanceBattle = 261
     }

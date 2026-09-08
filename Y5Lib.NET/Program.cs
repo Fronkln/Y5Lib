@@ -36,10 +36,10 @@ namespace Y5Lib.NET
                 ExceptionHandling.SetUnhandledExceptionHandler(ex =>
                 {
                     AppDomain.CurrentDomain.UnhandledException -= CurrentDomain_UnhandledException;  // this is important. Any exception occuring in the logging mechanism can cause a stack overflow exception which triggers the window's own JIT message/App crash message if Win JIT is not available.
-                    OE.LogInfo("*******************FATAL ERROR***************");
-                    OE.LogInfo("Inner Exception:\n" + ex.InnerException);
-                    OE.LogInfo("Message:\n" + ex.Message);
-                    OE.LogInfo("Stacktrace: \n" + ex.StackTrace);
+                    OE.LogError("*******************FATAL ERROR***************");
+                    OE.LogError("Inner Exception:\n" + ex.InnerException);
+                    OE.LogError("Message:\n" + ex.Message);
+                    OE.LogError("Stacktrace: \n" + ex.StackTrace);
                     MessageBox((IntPtr)0, "Fatal error! More information available on Mods/Y5lib/log.txt. The game will now exit", "Fatal OOELibrary Error", 0x00000010);
                     Environment.Exit(-1); // exit and avoid WER etc
 
@@ -120,10 +120,10 @@ namespace Y5Lib.NET
             AppDomain.CurrentDomain.UnhandledException -= CurrentDomain_UnhandledException;  // this is important. Any exception occuring in the logging mechanism can cause a stack overflow exception which triggers the window's own JIT message/App crash message if Win JIT is not available.
 
             Exception ex = e.ExceptionObject as Exception;
-            OE.LogInfo("*******************FATAL ERROR***************");
-            OE.LogInfo("Inner Exception:\n" + ex.InnerException);
-            OE.LogInfo("Message:\n" + ex.Message);
-            OE.LogInfo("Stacktrace: \n" + ex.StackTrace);
+            OE.LogError("*******************FATAL ERROR***************");
+            OE.LogError("Inner Exception:\n" + ex.InnerException);
+            OE.LogError("Message:\n" + ex.Message);
+            OE.LogError("Stacktrace: \n" + ex.StackTrace);
             MessageBox((IntPtr)0, "Fatal error! More information available on Mods/Y5lib/log.txt. The game will now exit", "Fatal OOELibrary Error", 0x00000010);
             Environment.Exit(-1); // exit and avoid WER etc
         }

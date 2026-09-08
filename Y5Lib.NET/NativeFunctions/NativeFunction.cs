@@ -6,10 +6,13 @@
         {
             EntityNativeFunctions.Init();
             MemoryNativeFunctions.Init();
+            PlayerNativeFunctions.Init();
+            CDanceBattleDancerNativeFunctions.Init();
             CActionDriveUIManagerNativeFunctions.Init();
             CActEntityManagerNativeFunctions.Init();
             CActionCameraManagerNativeFunctions.Init();
             CDriveSequenceNativeFunctions.Init();
+            CUISStoryHDbNativeFunctions.Init();
         }
     }
 }
